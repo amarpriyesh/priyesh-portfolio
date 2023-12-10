@@ -14,6 +14,11 @@ const nextConfig = {
         hostname: "127.0.0.1",
         port: "3000",
       },
+      {
+        protocol: "https",
+        hostname: "::1",
+        port: "443",
+      },
     ],
   },
 };
