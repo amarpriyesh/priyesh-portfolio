@@ -59,7 +59,7 @@ export default function Home() {
             <div className="lg:flex gap-10">
               <div className="text-center shadow-2xl p-10 rounded-xl my-10">
                 <div className="inline-block transition-transform duration-300 hover:scale-125">
-                  <Image src={design} width={100} height={100} />
+                  <img src="/design.png" width={100} height={100} />
                 </div>
                 <h3 className="text-lg font-medium pt-8 pb-2">Beautiful Design</h3>
                 <p>Creatig elegant designs suited for you</p>
@@ -69,7 +69,7 @@ export default function Home() {
               </div>
               <div className="text-center shadow-2xl p-10 rounded-xl my-10">
                 <div className="inline-block transition-transform duration-300 hover:scale-125">
-                  <Image src={design} width={100} height={100} />
+                <img src="/design.png" width={100} height={100} />
                 </div>
                 <h3 className="text-lg font-medium pt-8 pb-2">Beautiful Design</h3>
                 <p>Creatig elegant designs suited for you</p>
@@ -92,16 +92,16 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
               <div className="basis-1/3 flex-1">
-                <Image className="rounded-lg object-cover" src={design} layout="responsive" width={"100%"} height={"100%"}></Image>
+                <img className="rounded-lg object-cover"  src="/design.png" layout="responsive" width={"100%"} height={"100%"}></img>
               </div>
               <div className="basis-1/3 flex-1">
-              <Image className="rounded-lg object-cover" src={design} layout="responsive" width={"100%"} height={"100%"}></Image>
+              <img className="rounded-lg object-cover"  src="/design.png"  layout="responsive" width={"100%"} height={"100%"}></img>
               </div>
               <div className="basis-1/3 flex-1">
-              <Image className="rounded-lg object-cover" src={design} layout="responsive" width={"100%"} height={"100%"}></Image>
+              <img className="rounded-lg object-cover"  src="/design.png" layout="responsive" width={"100%"} height={"100%"}></img>
               </div>
               <div className="basis-1/3 flex-1">
-              <Image className="rounded-lg object-cover" src={design} layout="responsive" width={"100%"} height={"100%"}></Image>
+              <img className="rounded-lg object-cover"  src="/design.png"  layout="responsive" width={"100%"} height={"100%"}></img>
               </div>
             </div>
           </section>
