@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["priyeshportfolio.info", "127.0.0.1"],
     remotePatterns: [
       {
         protocol: "https",
