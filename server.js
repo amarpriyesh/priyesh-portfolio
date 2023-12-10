@@ -12,7 +12,7 @@ const port =
 
 console.log(port);
 const dev = process.env.NEXT_ENV !== "production";
-const app = next({ dev});
+const app = next({ dev, port});
 const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
