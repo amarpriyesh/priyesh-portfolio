@@ -5,12 +5,24 @@ import {
   AiFillLinkedin,
   AiFillYoutube,
 } from "react-icons/ai";
+import Slider from "react-slick";
 import Image from "next/image";
 import profile from "../public/profile.png";
 import design from "../public/design.png";
 import { useState } from "react";
+import Carousel from "@/components/carousel";
+import CardCarousel from "@/components/cardcarousel";
+
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+  const data = [
+    { title: "1", content: "aa" },
+    { title: "2", content: "bb" },
+    { title: "3", content: "bb" },
+    { title: "4", content: "bb" },
+    { title: "5", content: "bb" },
+    { title: "6", content: "bb" }
+  ];
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
@@ -21,6 +33,7 @@ export default function Home() {
       </Head>
       <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
         <section className="min-h-screen">
+        
           <nav className="py-10 mb-12 flex justify-between font-burtons">
             <h1>Developed by Priyesh</h1>
 
@@ -102,6 +115,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <div>
+        <CardCarousel cardsData={data}/>
+        </div>
         <section>
           <div>
             <h3 className="text-2xl py-2">Portfolio</h3>
@@ -148,7 +164,13 @@ export default function Home() {
               ></img>
             </div>
           </div>
+
+        
         </section>
+        
+
+          
+       
       </main>
     </div>
   );
