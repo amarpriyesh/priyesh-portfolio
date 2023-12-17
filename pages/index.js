@@ -1,28 +1,37 @@
 import Head from "next/head";
 import { BsFillMoonStarsFill } from "react-icons/bs";
-import {
-  AiFillTwitterCircle,
-  AiFillLinkedin,
-  AiFillYoutube,
-} from "react-icons/ai";
-import Slider from "react-slick";
-import Image from "next/image";
-import profile from "../public/profile.png";
-import design from "../public/design.png";
+
+import Front from "./front";
 import { useState } from "react";
-import Carousel from "@/components/carousel";
-import CardCarousel from "@/components/cardcarousel";
+
+const ExploreSlider = ({ isOpen, onClose }) => {
+  return (
+    <>
+      <div className={` ${isOpen ? "overlay" : ""}`}></div>
+      <div className={`slider-container ${isOpen ? "open" : ""}`}>
+        <div className={`slider-content ${isOpen ? "open" : ""}`}>
+          <p className="text-lg font-semibold mb-4">Select Options:</p>
+          {/* Add your slider content and options here */}
+          <button
+            onClick={onClose}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
-  const data = [
-    { title: "1", content: "aa" },
-    { title: "2", content: "bb" },
-    { title: "3", content: "bb" },
-    { title: "4", content: "bb" },
-    { title: "5", content: "bb" },
-    { title: "6", content: "bb" }
-  ];
+  const [isSliderOpen, setSliderOpen] = useState(false);
+
+  const handleButtonClick = () => {
+    setSliderOpen(!isSliderOpen);
+  };
+
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
@@ -31,146 +40,54 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
-        <section className="min-h-screen">
-        
-          <nav className="py-10 mb-12 flex justify-between font-burtons">
-            <h1>Developed by Priyesh</h1>
-
-            <ul className="flex items-center">
-              <li>
-                <BsFillMoonStarsFill
-                  className="cursor-pointer text-2xl dark:fill-white"
-                  onClick={() => setDarkMode(!darkMode)}
-                />
-              </li>
-              <li>
-                <a
-                  href="/priyesh_resume.pdf"
-                  download="Priyesh_Resume.pdf"
-                  className="bg-gradient-to-r from-cyan-500 to-text-teal-500 text-white px-4 py-2 rounded-md ml-8"
-                >
-                  Resume
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div className="text-center p-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl lg:text-8xl">
-              Priyesh
-            </h2>
-            <h3 className="text-2xl py-2">Developer and Designer</h3>
-            <p className="text-md py-5 leadin-8 text-gray-800 max-w-xl mx-auto">
-              Technology enthusiast and software developer
-            </p>
-          </div>
-          <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
-            <AiFillTwitterCircle />
-            <AiFillLinkedin />
-            <AiFillYoutube />
-          </div>
-          <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden">
-            <img
-              src="/profile.png"
-              className="rounded-full"
-              layout="fill"
-              objectFit="cover"
+      <main
+        className="bg-white  dark:bg-gray-900"
+        onClick={() => (isSliderOpen ? handleButtonClick() : "")}
+      >
+        <div className={` min-h-screen ${isSliderOpen ? "divide-x" : ""}`}>
+          <div className="flex">
+          <div className={` ${isSliderOpen ? "w-1/5" : "w-full"}`}>
+            <ExploreSlider
+              isOpen={isSliderOpen}
+              onClose={() => setSliderOpen(false)}
             />
           </div>
-        </section>
-        <section>
-          <div>
-            <h3 className="text-3xl py-1">Services I offer</h3>
-            <p className="text-md py-2 leading-8 text-gray-800">
-              Here are my Services <span className="text-teal-500">Tech</span>.
-            </p>
-            <p className="text-md py-2 leading-8 text-gray-800">
-              Here are my Services <span className="text-teal-500">Tech</span>.
-            </p>
+
+          <div className={`px-0  ${isSliderOpen ? "w-4/5" : "w-full"}`}>
+            <nav className="pt-5 pb-5 flex justify-between font-burtons dark:text-white  bg-gradient-to-b from-teal-500 ">
+              <h1 onClick={() => handleButtonClick()}>More</h1>
+
+              <ul className="flex items-center justify-between">
+                <li className="pl-2">Projects</li>
+                <li className="pl-2">Work Experience</li>
+              </ul>
+
+              <ul className="flex items-center">
+                <li>
+                  <BsFillMoonStarsFill
+                    className="cursor-pointer text-2xl dark:fill-white"
+                    onClick={() => setDarkMode(!darkMode)}
+                  />
+                </li>
+                <li>
+                  <a
+                    href="/priyesh_resume.pdf"
+                    download="Priyesh_Resume.pdf"
+                    className="bg-gradient-to-r from-cyan-500 to-text-teal-500 text-white px-4 py-2 rounded-md ml-8"
+                  >
+                    Resume
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div className="px-10 md:px-20 lg:px-40">
+            <Front />
           </div>
-          <div className="lg:flex gap-10">
-            <div className="text-center shadow-2xl p-10 rounded-xl my-10">
-              <div className="inline-block transition-transform duration-300 hover:scale-125">
-                <img src="/design.png" width={100} height={100} />
-              </div>
-              <h3 className="text-lg font-medium pt-8 pb-2">
-                Beautiful Design
-              </h3>
-              <p>Creatig elegant designs suited for you</p>
-              <h4 className="py-4 text-teal-600">Design tools I use</h4>
-              <p className="text-gray-800 py-1">photo shop</p>
-              <p className="text-gray-800 py-1">figma</p>
-            </div>
-            <div className="text-center shadow-2xl p-10 rounded-xl my-10">
-              <div className="inline-block transition-transform duration-300 hover:scale-125">
-                <img src="/design.png" width={100} height={100} />
-              </div>
-              <h3 className="text-lg font-medium pt-8 pb-2">
-                Beautiful Design
-              </h3>
-              <p>Creatig elegant designs suited for you</p>
-              <h4 className="py-4 text-teal-600">Design tools I use</h4>
-              <p className="text-gray-800 py-1">photo shop</p>
-              <p className="text-gray-800 py-1">figma</p>
-            </div>
           </div>
-        </section>
-        <div>
-        <CardCarousel cardsData={data}/>
+
+        
+          </div>
         </div>
-        <section>
-          <div>
-            <h3 className="text-2xl py-2">Portfolio</h3>
-            <p>Creatig elegant designs suited for you</p>
-            <h4 className="py-4 text-teal-600">Design tools I use</h4>
-            <p className="text-gray-800 py-1">photo shop</p>
-            <p className="text-gray-800 py-1">figma</p>
-          </div>
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <div className="basis-1/3 flex-1">
-              <img
-                className="rounded-lg object-cover"
-                src="/design.png"
-                layout="responsive"
-                width={"100%"}
-                height={"100%"}
-              ></img>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <img
-                className="rounded-lg object-cover"
-                src="/design.png"
-                layout="responsive"
-                width={"100%"}
-                height={"100%"}
-              ></img>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <img
-                className="rounded-lg object-cover"
-                src="/design.png"
-                layout="responsive"
-                width={"100%"}
-                height={"100%"}
-              ></img>
-            </div>
-            <div className="basis-1/3 flex-1">
-              <img
-                className="rounded-lg object-cover"
-                src="/design.png"
-                layout="responsive"
-                width={"100%"}
-                height={"100%"}
-              ></img>
-            </div>
-          </div>
-
-        
-        </section>
-        
-
-          
-       
       </main>
     </div>
   );

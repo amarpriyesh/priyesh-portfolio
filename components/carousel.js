@@ -1,7 +1,7 @@
 const Carousel = ({title,content}) => {
 
     return (
-        <div className="text-center  rounded-xl shadow-2xl p-10 m-1 ">
+        <div className="text-center  rounded-xl p-20 m-1 transition-transform duration-300 hover:scale-125 ">
         <div className="inline-block transition-transform duration-300 hover:scale-125">
           <img src="/design.png" width={100} height={100} />
         </div>
