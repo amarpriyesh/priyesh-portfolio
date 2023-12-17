@@ -7,14 +7,17 @@ import { useState } from "react";
 
 const CardCarousel = ({ cardsData, autoPlaySpeed = 2000 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const getSlideClass = (index) => {
+    return index === currentSlide ? "slide-current" : "slide-blurred";
+  };
   
 
   const settings = {
     dots: true,
     infinite: true,
     centerMode: true,
-    centerPadding: "60px",
-    slidesToShow: 1,
+    centerPadding: "0px",
+    slidesToShow: 3,
     speed: 200,
     autoplay: true,
     autoplaySpeed: autoPlaySpeed,
@@ -24,7 +27,7 @@ const CardCarousel = ({ cardsData, autoPlaySpeed = 2000 }) => {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          centerPadding: "40px",
+          centerPadding: "0px",
         },
       },
       // ... other responsive settings
@@ -35,7 +38,9 @@ const CardCarousel = ({ cardsData, autoPlaySpeed = 2000 }) => {
     <div  tabIndex={0}>
       <Slider {...settings}>
         {cardsData.map((card, idx) => (
+          <div  className={getSlideClass(idx)} key={idx}>
           <Carousel key={idx} title={card.title} content={card.content} />
+          </div>
         ))}
       </Slider>
     </div>

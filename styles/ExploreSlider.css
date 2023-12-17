@@ -1,0 +1,78 @@
+/* ExploreSlider.module.css */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999; /* Adjust as needed to be above the slider */
+  pointer-events: none;
+}
+
+.overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  backdrop-filter: blur(2px); /* Adjust the blur intensity as needed */
+}
+
+
+.slider-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Adjust as needed for placement */
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.slider-content {
+  background: white;
+  width: 100%; /* Adjust as needed for width */
+  height: 100%;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.slider-container.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slider-content.open {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.overlay.open {
+  opacity: 0;
+  pointer-events: auto;
+}
+
+.blur-background {
+  backdrop-filter: blur(5px); /* Adjust the blur intensity as needed */
+}
+
+.slide-current {
+  transform: scale(1.2); /* Enlarge the current slide */
+  border: 2px solid #fff; /* Add a border */
+  transition: transform 0.3s ease;
+}
+
+.slide-blurred {
+  filter: blur(4px); /* Blur the side slides */
+  transition: filter 0.3s ease;
+}
