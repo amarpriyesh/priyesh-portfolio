@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { BsFillMoonStarsFill } from "react-icons/bs";
+import { BsFillMoonStarsFill, BsX, BsDownload } from "react-icons/bs";
 
 import Front from "./front";
 import { useState } from "react";
@@ -8,16 +8,18 @@ const ExploreSlider = ({ isOpen, onClose }) => {
   return (
     <>
       <div className={` ${isOpen ? "overlay" : ""}`}></div>
-      <div className={`slider-container ${isOpen ? "open" : ""}`}>
-        <div className={`slider-content ${isOpen ? "open" : ""}`}>
-          <p className="text-lg font-semibold mb-4">Select Options:</p>
-          {/* Add your slider content and options here */}
-          <button
-            onClick={onClose}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Close
-          </button>
+      <div className={`slider-container  bg-teal-300 ${isOpen ? "open" : ""}`}>
+        <div className={`slider-content  bg-teal-300 ${isOpen ? "open" : ""}`}>
+          
+            <div className="justify-between flex font-burtons p-3">
+              <div className="text-lg  ">Links:</div>
+          
+              <div>
+              
+                  <BsX  onClick={onClose} className="h-7 w-7"/>
+                
+              </div>
+            </div>
         </div>
       </div>
     </>
@@ -46,46 +48,49 @@ export default function Home() {
       >
         <div className={` min-h-screen ${isSliderOpen ? "divide-x" : ""}`}>
           <div className="flex">
-          <div className={` ${isSliderOpen ? "w-1/5" : "w-full"}`}>
-            <ExploreSlider
-              isOpen={isSliderOpen}
-              onClose={() => setSliderOpen(false)}
-            />
-          </div>
+            <div className={` ${isSliderOpen ? "w-1/5" : "w-full"}`}>
+              <ExploreSlider
+                isOpen={isSliderOpen}
+                onClose={() => setSliderOpen(false)}
+              />
+            </div>
 
-          <div className={`px-0  ${isSliderOpen ? "w-4/5" : "w-full"}`}>
-            <nav className="pt-5 pb-5 flex justify-between font-burtons dark:text-white  bg-gradient-to-b from-teal-500 ">
-              <h1 onClick={() => handleButtonClick()}>More</h1>
+            <div className={`  ${isSliderOpen ? "w-4/5" : "w-full"}`}>
+              <nav className="pt-5 p-5 flex justify-between font-burtons dark:text-white  bg-gradient-to-b from-teal-500 ">
+                <div className="justify-start flex">
 
-              <ul className="flex items-center justify-between">
-                <li className="pl-2">Projects</li>
-                <li className="pl-2">Work Experience</li>
-              </ul>
+                <h1 onClick={() => handleButtonClick()}>More</h1>
 
-              <ul className="flex items-center">
-                <li>
-                  <BsFillMoonStarsFill
-                    className="cursor-pointer text-2xl dark:fill-white"
-                    onClick={() => setDarkMode(!darkMode)}
-                  />
-                </li>
-                <li>
-                  <a
-                    href="/priyesh_resume.pdf"
-                    download="Priyesh_Resume.pdf"
-                    className="bg-gradient-to-r from-cyan-500 to-text-teal-500 text-white px-4 py-2 rounded-md ml-8"
-                  >
-                    Resume
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <div className="px-10 md:px-20 lg:px-40">
-            <Front />
-          </div>
-          </div>
+                <ul className="flex ps-10 ">
+                  <li className="pl-10">Projects</li>
+                  <li className="pl-10">Work Experience</li>
+                </ul>
+                </div>
+                <div>
 
-        
+                <ul className="flex items-center">
+                  <li>
+                    <BsFillMoonStarsFill
+                      className="cursor-pointer text-3xl dark:fill-white"
+                      onClick={() => setDarkMode(!darkMode)}
+                    />
+                  </li>
+                  <li className="justify-between flex">
+                    <a
+                      href="/priyesh_resume.pdf"
+                      download="Priyesh_Resume.pdf"
+                      className="pl-10 flex"
+                    >
+                     <BsDownload className="flex text-xl mr-2"/>Resume
+                    </a>
+                  </li>
+                </ul>
+                </div>
+              </nav>
+              <div className="px-10 md:px-20 lg:px-40">
+                <Front />
+              </div>
+            </div>
           </div>
         </div>
       </main>
