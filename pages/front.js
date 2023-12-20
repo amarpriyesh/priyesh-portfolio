@@ -88,7 +88,7 @@ Implementing data storage solutions and writing efficient queries.`,
           Software Engineer and Infrastructure Expert
         </h3>
         <p className="text-md py-2 leadin-8 text-gray-800 max-w-xl mx-auto dark:text-slate-400">
-          I'm a passionate software engineer with over 4 years of experience,
+          I`&aposm a passionate software engineer with over 4 years of experience,
           specializing in Java, Python, JavaScript, and React. My expertise
           encompasses working with microservices, RESTful APIs, testing, data
           structures, devops tools, and Agile methodologies.
