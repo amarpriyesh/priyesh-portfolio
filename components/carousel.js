@@ -1,19 +1,35 @@
-const Carousel = ({title,content}) => {
+const Carousel = ({ title, content, image, idx, currentSlideV }) => {
+  const getItemStyle = (index, slide) => {
+    if (index === slide) {
+      return { width: "400px", height: "500px" };
+    } else {
+      return { width: "350px", height: "450px" };
+    }
+  };
 
-    return (
-        <div className="text-center  rounded-xl p-20 m-1 transition-transform duration-300 hover:scale-125 ">
-        <div className="inline-block transition-transform duration-300 hover:scale-125">
-          <img src="/design.png" width={100} height={100} />
-        </div>
-        <h3 className="text-lg font-medium pt-8 pb-2">
-          {title}
-        </h3>
-        <p>{content}</p>
-        <h4 className="py-4 text-teal-600">Design tools I use</h4>
-        <p className="text-gray-800 py-1">photo shop</p>
-        <p className="text-gray-800 py-1">figma</p>
-      </div>)
+  const boxStyle = (index, slide) => {
+    if (index === slide) {
+      return { width: "410px", height: "600px" , boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", // Equivalent to shadow-2xl
+      border: "2px solid #e2e8f0",};
+    } else {
+      return { width: "360px", height: "550px", boxShadow: "0 8px 16px -8px rgba(0, 0, 0, 0.2)", marginLeft:"5px",// Adjust as needed
+      border: "1px solid  #e2e8f0",  };
+    }
+  };
 
-}
+  return (
+    <div className="text-center  rounded-2xl transition-transform duration-300 hover:scale-120 slide-current:bg-slate-400  " style={boxStyle(idx, currentSlideV)}>
+      <h3 className="text-lg font-medium pt-2 pb-2 dark:text-white">{title}</h3>
+      <p className="dark:text-white pb-2">{content}</p>
+      <div className="inline-block  " style={getItemStyle(idx, currentSlideV)}>
+        <img
+          className="rounded-2xl p-1 border-l-black "
+          src={image}
+          style={{ width: "100%", height: "100%", objectFit: "fill" }}
+        />
+      </div>
+    </div>
+  );
+};
 
 export default Carousel;

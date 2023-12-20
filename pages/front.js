@@ -1,44 +1,105 @@
+import { AiFillGithub, AiFillLinkedin, AiFillYoutube } from "react-icons/ai";
+import Slider from "react-slick";
+import Image from "next/image";
+import profile from "../public/profile.png";
+import design from "../public/design.png";
 
-import {
-    AiFillTwitterCircle,
-    AiFillLinkedin,
-    AiFillYoutube,
-  } from "react-icons/ai";
-  import Slider from "react-slick";
-  import Image from "next/image";
-  import profile from "../public/profile.png";
-  import design from "../public/design.png";
-  
-  import Carousel from "@/components/carousel";
-  import CardCarousel from "@/components/cardcarousel";
-
+import Carousel from "@/components/carousel";
+import CardCarousel from "@/components/cardcarousel";
+import CardMap from "@/components/cardmap";
 const Front = () => {
-    const data = [
-        { title: "1", content: "aa" },
-        { title: "2", content: "bb" },
-        { title: "3", content: "bb" },
-        { title: "4", content: "bb" },
-        { title: "5", content: "bb" },
-        { title: "6", content: "bb" }
-      ];
-    
-return (
-<>
-      <div className="text-center pb-10">
-        <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl lg:text-8xl">
+  const data = [
+    {
+      title: "Pac Man Game with Dungeons",
+      content: "Technologies USed: Java, Junit",
+      image: "/pacman.png",
+    },
+    {
+      title: "Trending Stock Market WebSite",
+      content: "Technologies USed: Javascript, React, Bootstrap, Express, Node",
+      image: "/stockmarket.png",
+    },
+  
+    {
+      title: "Tuiter Website",
+      content: "Technologies USed: Typescript, Javascript, React, Node",
+      image: "/tuiter.png",
+    },
+    {
+      title: "Weather Android App",
+      content: "Technologies USed: Java, Android",
+      image: "/weatherapp.png",
+    },
+    {
+      title: "Smart Savr wallet App",
+      content: "Technologies USed:  Java, Android, kotlin",
+      image: "/smartsavrchores.png",
+    },
+  
+    {
+      title: "Visulization BI tool",
+      content: "Technologies USed: Python, TkInktr",
+      image: "/visualization.png",
+    },
+  
+  
+  ];
+  const cardData = [
+
+    {
+      title: "Software Development:",
+      description: `Designing, coding, and testing software applications.
+Developing web applications, mobile apps, desktop software, and more.
+Writing clean, efficient, and well-documented code in various programming languages (e.g., Python, Java, JavaScript, C++, etc.).`,
+    },
+    {
+      title: "Cloud Computing Services:",
+      description: `Designing and managing cloud-based solutions.
+Working with platforms like AWS, Azure, and Google Cloud.
+Implementing and managing cloud storage, computing, and various services.`,
+    },
+    {
+      title: "Technical Consulting:",
+      description: `Providing expert advice on software development practices.
+Helping businesses understand and implement technology solutions.
+Conducting system analysis and recommending improvements.`,
+    },
+    {
+      title: "Machine Learning and Artificial Intelligence:",
+      description: `Developing AI-driven applications.
+Implementing machine learning models.
+Analyzing data and creating predictive models.`,
+    },
+    {
+      title: "Database Design and Management:",
+      description: `Creating and managing databases.
+Ensuring data integrity, performance, and security.
+Implementing data storage solutions and writing efficient queries.`,
+    },
+  ]
+
+  return (
+    <>
+      <div className="text-center pb-5 dark:text-slate-300">
+        <h2 className="text-4xl py-2 text-teal-600 font-medium md:text-5xl lg:text-6xl">
           Priyesh
         </h2>
-        <h3 className="text-2xl py-2">Developer and Designer</h3>
-        <p className="text-md py-5 leadin-8 text-gray-800 max-w-xl mx-auto">
-          Technology enthusiast and software developer
+        <h3 className="text-2xl py-2">
+          Software Engineer and Infrastructure Expert
+        </h3>
+        <p className="text-md py-2 leadin-8 text-gray-800 max-w-xl mx-auto dark:text-slate-400">
+          I'm a passionate software engineer with over 4 years of experience,
+          specializing in Java, Python, JavaScript, and React. My expertise
+          encompasses working with microservices, RESTful APIs, testing, data
+          structures, devops tools, and Agile methodologies.
         </p>
       </div>
-      <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
-        <AiFillTwitterCircle />
-        <AiFillLinkedin />
-        <AiFillYoutube />
+      <div className="text-5xl flex justify-center gap-16  text-gray-600 ">
+        <AiFillGithub className="dark:fill-white transition-transform duration-300 hover:scale-150 cursor-pointer" />
+        <AiFillLinkedin className="dark:fill-white transition-transform duration-300 hover:scale-150 cursor-pointer" />
+        <AiFillYoutube className="dark:fill-white transition-transform duration-300 hover:scale-150 cursor-pointer" />
       </div>
-      <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden">
+      <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-10 overflow-hidden">
         <img
           src="/profile.png"
           className="rounded-full"
@@ -46,95 +107,23 @@ return (
           objectFit="cover"
         />
       </div>
-    <section>
-      <div>
-        <h3 className="text-3xl py-1">Services I offer</h3>
-        <p className="text-md py-2 leading-8 text-gray-800">
-          Here are my Services <span className="text-teal-500">Tech</span>.
-        </p>
-        <p className="text-md py-2 leading-8 text-gray-800">
-          Here are my Services <span className="text-teal-500">Tech</span>.
-        </p>
-      </div>
-      <div className="lg:flex gap-10">
-        <div className="text-center shadow-2xl p-10 rounded-xl my-10">
-          <div className="inline-block transition-transform duration-300 hover:scale-125">
-            <img src="/design.png" width={100} height={100} />
-          </div>
-          <h3 className="text-lg font-medium pt-8 pb-2">
-            Beautiful Design
-          </h3>
-          <p>Creatig elegant designs suited for you</p>
-          <h4 className="py-4 text-teal-600">Design tools I use</h4>
-          <p className="text-gray-800 py-1">photo shop</p>
-          <p className="text-gray-800 py-1">figma</p>
+      <section>
+        <div className="text-center">
+          <h3 className="text-3xl pt-2">Services Offered:</h3>
         </div>
-        <div className="text-center shadow-2xl p-10 rounded-xl my-10">
-          <div className="inline-block transition-transform duration-300 hover:scale-125">
-            <img src="/design.png" width={100} height={100} />
-          </div>
-          <h3 className="text-lg font-medium pt-8 pb-2">
-            Beautiful Design
-          </h3>
-          <p>Creatig elegant designs suited for you</p>
-          <h4 className="py-4 text-teal-600">Design tools I use</h4>
-          <p className="text-gray-800 py-1">photo shop</p>
-          <p className="text-gray-800 py-1">figma</p>
+        <div className="lg:flex gap-10">
+          <CardMap data={cardData} />
+          
         </div>
-      </div>
-    </section>
-    <div>
-    <CardCarousel cardsData={data}/>
-    </div>
-    <section>
-      <div>
-        <h3 className="text-2xl py-2">Portfolio</h3>
-        <p>Creatig elegant designs suited for you</p>
-        <h4 className="py-4 text-teal-600">Design tools I use</h4>
-        <p className="text-gray-800 py-1">photo shop</p>
-        <p className="text-gray-800 py-1">figma</p>
-      </div>
-      <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-        <div className="basis-1/3 flex-1">
-          <img
-            className="rounded-lg object-cover"
-            src="/design.png"
-            layout="responsive"
-            width={"100%"}
-            height={"100%"}
-          ></img>
-        </div>
-        <div className="basis-1/3 flex-1">
-          <img
-            className="rounded-lg object-cover"
-            src="/design.png"
-            layout="responsive"
-            width={"100%"}
-            height={"100%"}
-          ></img>
-        </div>
-        <div className="basis-1/3 flex-1">
-          <img
-            className="rounded-lg object-cover"
-            src="/design.png"
-            layout="responsive"
-            width={"100%"}
-            height={"100%"}
-          ></img>
-        </div>
-        <div className="basis-1/3 flex-1">
-          <img
-            className="rounded-lg object-cover"
-            src="/design.png"
-            layout="responsive"
-            width={"100%"}
-            height={"100%"}
-          ></img>
-        </div>
-      </div>
       </section>
-      </>  
-)
-}
+      <div>
+        <CardCarousel cardsData={data} />
+      </div>
+      <section className="mt-10">
+        Contacts
+      </section>
+    </>
+  );
+};
 
 export default Front;
