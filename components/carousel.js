@@ -1,7 +1,7 @@
 const Carousel = ({ title, content, image, idx, currentSlideV }) => {
   const getItemStyle = (index, slide) => {
     if (index === slide) {
-      return { width: "400px", height: "500px" };
+      return { width: "390px", height: "500px" };
     } else {
       return { width: "350px", height: "450px" };
     }
@@ -9,10 +9,10 @@ const Carousel = ({ title, content, image, idx, currentSlideV }) => {
 
   const boxStyle = (index, slide) => {
     if (index === slide) {
-      return { width: "410px", height: "600px" , boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", // Equivalent to shadow-2xl
+      return { width: "395px", height: "600px" , boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)", // Equivalent to shadow-2xl
       border: "2px solid #e2e8f0",};
     } else {
-      return { width: "360px", height: "550px", boxShadow: "0 8px 16px -8px rgba(0, 0, 0, 0.2)", marginLeft:"5px",// Adjust as needed
+      return { width: "355px", height: "550px", boxShadow: "0 8px 16px -8px rgba(0, 0, 0, 0.2)", marginLeft:"5px",// Adjust as needed
       border: "1px solid  #e2e8f0",  };
     }
   };

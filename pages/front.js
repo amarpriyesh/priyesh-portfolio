@@ -19,7 +19,7 @@ const Front = () => {
       content: "Technologies USed: Javascript, React, Bootstrap, Express, Node",
       image: "/stockmarket.png",
     },
-  
+
     {
       title: "Tuiter Website",
       content: "Technologies USed: Typescript, Javascript, React, Node",
@@ -35,17 +35,14 @@ const Front = () => {
       content: "Technologies USed:  Java, Android, kotlin",
       image: "/smartsavrchores.png",
     },
-  
+
     {
       title: "Visulization BI tool",
       content: "Technologies USed: Python, TkInktr",
       image: "/visualization.png",
     },
-  
-  
   ];
   const cardData = [
-
     {
       title: "Software Development:",
       description: `Designing, coding, and testing software applications.
@@ -76,7 +73,7 @@ Analyzing data and creating predictive models.`,
 Ensuring data integrity, performance, and security.
 Implementing data storage solutions and writing efficient queries.`,
     },
-  ]
+  ];
 
   return (
     <>
@@ -84,11 +81,11 @@ Implementing data storage solutions and writing efficient queries.`,
         <h2 className="text-4xl py-2 text-teal-600 font-medium md:text-5xl lg:text-6xl">
           Priyesh
         </h2>
-        <h3 className="text-2xl py-2">
+        <h3 className="text-2xl py-2 text-gray-800">
           Software Engineer and Infrastructure Expert
         </h3>
         <p className="text-md py-2 leadin-8 text-gray-800 max-w-xl mx-auto dark:text-slate-400">
-          I`&aposm a passionate software engineer with over 4 years of experience,
+          I am a passionate software engineer with over 4 years of experience,
           specializing in Java, Python, JavaScript, and React. My expertise
           encompasses working with microservices, RESTful APIs, testing, data
           structures, devops tools, and Agile methodologies.
@@ -107,21 +104,18 @@ Implementing data storage solutions and writing efficient queries.`,
           objectFit="cover"
         />
       </div>
-      <section>
+      <section className="text-gray-800">
         <div className="text-center">
           <h3 className="text-3xl pt-2">Services Offered:</h3>
         </div>
         <div className="lg:flex gap-10">
           <CardMap data={cardData} />
-          
         </div>
       </section>
-      <div>
+      <div className="text-gray-800">
         <CardCarousel cardsData={data} />
       </div>
-      <section className="mt-10">
-        Contacts
-      </section>
+      <section className="mt-10">Contacts</section>
     </>
   );
 };
