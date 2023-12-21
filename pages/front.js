@@ -81,7 +81,7 @@ Implementing data storage solutions and writing efficient queries.`,
         <h2 className="text-4xl py-2 text-teal-600 font-medium md:text-5xl lg:text-6xl">
           Priyesh
         </h2>
-        <h3 className="text-2xl py-2 text-gray-800">
+        <h3 className="text-2xl py-2 text-gray-800 dark:text-slate-300">
           Software Engineer and Infrastructure Expert
         </h3>
         <p className="text-md py-2 leadin-8 text-gray-800 max-w-xl mx-auto dark:text-slate-400">
@@ -96,17 +96,37 @@ Implementing data storage solutions and writing efficient queries.`,
         <AiFillLinkedin className="dark:fill-white transition-transform duration-300 hover:scale-150 cursor-pointer" />
         <AiFillYoutube className="dark:fill-white transition-transform duration-300 hover:scale-150 cursor-pointer" />
       </div>
-      <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-10 overflow-hidden">
+      <div className=" relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20  ">
+      <div >
         <img
           src="/profile.png"
-          className="rounded-full"
+          className="rounded-full flex ml-0 mt-96 absolute bottom-0"
           layout="fill"
           objectFit="cover"
+          
         />
+        </div>
       </div>
-      <section className="text-gray-800">
+
+     
+
+      <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden " style={{width:"60%", height:"400px"}} >
+  <iframe 
+    class="relative top-0 left-0 w-full h-full" 
+    src="https://www.youtube.com/embed/aSVG7jiO6sY" 
+    title="YouTube video" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+
+
+    
+      <section className="text-gray-800 dark:text-slate-300">
         <div className="text-center">
-          <h3 className="text-3xl pt-2">Services Offered:</h3>
+          <h3 className="text-3xl pt-2 ">Software Engineering Solutions:</h3>
         </div>
         <div className="lg:flex gap-10">
           <CardMap data={cardData} />

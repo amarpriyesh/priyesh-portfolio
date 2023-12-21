@@ -57,7 +57,7 @@ const CardCarousel = ({ cardsData, autoPlaySpeed = 2000 }) => {
     centerPadding: "0px",
     slidesToShow: 3,
     speed: 200,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: autoPlaySpeed,
     beforeChange: (current, next) => setCurrentSlide(next),
     responsive: [
@@ -84,12 +84,13 @@ const CardCarousel = ({ cardsData, autoPlaySpeed = 2000 }) => {
   };
 
 
+
   return (
     <div  tabIndex={0} >
       <Slider {...settings} >
         {cardsData.map((card, idx) => (
-          <div  className={getSlideClass(idx)} key={idx}>
-          <Carousel  key={idx} title={card.title} content={card.content} image={card.image} idx={idx} currentSlideV={currentSlide}/>
+          <div  className={`${getSlideClass(idx)}`} key={idx} >
+          <Carousel   key={idx} title={card.title} content={card.content} image={card.image} idx={idx} currentSlideV={currentSlide}/>
           </div>
         ))}
       </Slider>
