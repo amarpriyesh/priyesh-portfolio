@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { BsFillMoonStarsFill, BsX, BsDownload } from "react-icons/bs";
+import { BsFillMoonStarsFill, BsMoonStars, BsX, BsDownload, BsCode, BsWindowDesktop, BsHouse, BsList} from "react-icons/bs";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
@@ -26,22 +26,22 @@ const ExploreSlider = ({ isOpen, onClose }) => {
               <BsX onClick={onClose} className="h-7 w-7" />
             </div>
           </div>
-          <ul className="justify-start">
+          <ul className=" flex flex-col justify-start p-3 gap-3">
             <li
               className={` ${
                 isActive("/") ? "text-white dark:text-purple-400" : ""
-              }`}
+              } `}
             >
-              <Link href="/">Home {/* This is the clickable part */}</Link>
+            
+              <Link href="/" className="flex text-2xl"> <BsHouse className=" text-3xl mr-2"/> <span className="hidden md:block">Home</span>  {/* This is the clickable part */}</Link>
             </li>
             <li
               className={` ${
                 isActive("/projects") ? "text-white dark:text-purple-400 " : ""
               }`}
             >
-              <Link href="/projects">
-                Projects {/* This is the clickable part */}
-              </Link>
+              <Link href="/projects" className="flex text-2xl"> <BsCode className=" text-3xl mr-2"/> <span className="hidden md:block">Projects</span>  {/* This is the clickable part */}</Link>
+
             </li>
             <li
               className={` ${
@@ -50,7 +50,8 @@ const ExploreSlider = ({ isOpen, onClose }) => {
                   : ""
               }`}
             >
-              <Link href="/workexperience">Work Experience</Link>
+            <Link href="/workexperience" className="flex text-2xl"> <BsHouse className=" text-3xl mr-2"/> <span className="hidden md:block">Work Experience</span>  {/* This is the clickable part */}</Link>
+
             </li>
           </ul>
         </div>
@@ -94,60 +95,70 @@ const Layout = ({ children, title = "Default Title" }) => {
             >
               <nav className="pt-5 p-5 flex justify-between font-burtons dark:text-white  bg-gradient-to-b from-teal-500 w-full">
                 <div className="justify-start flex">
-                  <h1 onClick={() => dispatch({ type: "toggleSlider" })}>
-                    More
+                  <h1 onClick={() => dispatch({ type: "toggleSlider" })} className="items-center flex-col flex hover:cursor-pointer">
+                  <BsList className=" block text-3xl hover:scale-125 "/>
+                  <span className="md:block hidden"> More </span> {/* This is the clickable part */}
+                      
                   </h1>
 
-                  <ul className="flex ps-10">
+                  <ul className="flex p3-3 md:ps-10">
                     <li
-                      className={`pl-10 ${
+                      className={`pl-3 md:pl-10 ${
                         isActive("/") ? "text-white dark:text-purple-400" : ""
-                      }`}
+                      } `}
                     >
-                      <Link href="/">
-                        Home {/* This is the clickable part */}
+                      <Link href="/" className="items-center flex-col flex">
+                      <BsHouse className=" block text-3xl hover:scale-125 "/>
+                      <span className="md:block hidden"> Home </span> {/* This is the clickable part */}
+                   
                       </Link>
                     </li>
                     <li
-                      className={`pl-10 ${
+                      className={`pl-3 md:pl-10 ${
                         isActive("/projects")
                           ? "text-white dark:text-purple-400"
                           : ""
                       }`}
                     >
-                      <Link href="/projects">
-                        Projects {/* This is the clickable part */}
+                      <Link href="/projects" className="items-center flex-col flex">
+                      <BsCode className=" block text-3xl  hover:scale-125"/>
+                      <span className="md:block hidden"> Projects </span> {/* This is the clickable part */}
+                      
                       </Link>
                     </li>
                     <li
-                      className={`pl-10 ${
+                      className={`pl-3 md:pl-10 ${
                         isActive("/workexperience")
                           ? "text-white dark:text-purple-400"
                           : ""
-                      }`}
+                      } `}
                     >
-                      <Link href="/workexperience">
-                        Work Experience {/* This is the clickable part */}
+                      <Link href="/workexperience" className="items-center flex-col flex">
+                      <BsWindowDesktop className=" block text-3xl hover:scale-125 "/>
+                      <span className="md:block hidden"> Work Experience </span> {/* This is the clickable part */}
+                      
                       </Link>
                     </li>
                   </ul>
                 </div>
                 <div>
                   <ul className="flex items-center">
-                    <li>
-                      <BsFillMoonStarsFill
-                        className="cursor-pointer text-3xl dark:fill-white"
+                    <li className="flex-col items-center flex">
+                      <BsMoonStars
+                        className="cursor-pointer text-3xl dark:fill-white hover:scale-125"
                         onClick={() => dispatch({ type: "toggleDark" })}
+                        
                       />
+                      <span className="hidden md:block">Dark Mode</span>
                     </li>
                     <li className="justify-between flex">
                       <a
                         href="/priyesh_resume.pdf"
                         download="Priyesh_Resume.pdf"
-                        className="pl-10 flex"
+                        className="pl-3 md:pl-10 flex flex-col items-center"
                       >
-                        <BsDownload className="flex text-xl mr-2" />
-                        Resume
+                        <BsDownload className="flex text-3xl mr-2 hover:scale-125" />
+                        <span className="hidden md:block">Resume</span>
                       </a>
                     </li>
                   </ul>
