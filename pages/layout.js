@@ -7,7 +7,7 @@ import Front from "./front";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import React, { useReducer } from "react";
-import { darkModeReducer } from "./reducers";
+import { darkModeReducer } from "../components/reducers";
 
 const ExploreSlider = ({ isOpen, onClose }) => {
   const router = useRouter();
@@ -88,11 +88,15 @@ const Layout = ({ children, title = "Default Title" }) => {
 
             <div
               className={`  ${sliderMode ? "w-4/5" : "w-full"}`}
-              onClick={() => (sliderMode ? dispatch({ type: "toggleSlider" }) : "")}
+              onClick={() =>
+                sliderMode ? dispatch({ type: "toggleSlider" }) : ""
+              }
             >
               <nav className="pt-5 p-5 flex justify-between font-burtons dark:text-white  bg-gradient-to-b from-teal-500 w-full">
                 <div className="justify-start flex">
-                  <h1 onClick={() => dispatch({ type: "toggleSlider" })}>More</h1>
+                  <h1 onClick={() => dispatch({ type: "toggleSlider" })}>
+                    More
+                  </h1>
 
                   <ul className="flex ps-10">
                     <li
