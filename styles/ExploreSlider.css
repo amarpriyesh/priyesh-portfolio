@@ -68,10 +68,10 @@
 }
 
 .slick-active .slide-current {
+  transform: scale(1);
+  transition: filter 0.3s ease;
   
 
-  transform: scale(1);
-  transition: transform 0.3s ease;
 }
 
 .slick-active .slide-blurred {
@@ -82,11 +82,14 @@
 
 
 
+
 }
 
 .custom {
 
   transform: scale(0.7);
   transform: scale(1);
+  transform: scale(1);
+  transition: filter 0.3s ease;
 }
 
