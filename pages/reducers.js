@@ -23,3 +23,4 @@ export const darkModeReducer = (state = initialState, action) => {
   };
 
   
+export default sliderReducer
