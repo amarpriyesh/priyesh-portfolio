@@ -116,10 +116,13 @@ Implementing data storage solutions and writing efficient queries.`,
     src="https://www.youtube.com/embed/aSVG7jiO6sY" 
     title="YouTube video" 
     frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+    allowFullScreen>
   </iframe>
 </div>
+
+
+
 
 
 
