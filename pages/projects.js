@@ -7,8 +7,8 @@ const Projects = () => {
       <div>
         {" "}
         <ul className="list-disc dark:text-gray-400">
-          {arr.map((a) => (
-            <li> {a}</li>
+          {arr.map((a, key) => (
+            <li key={key}> {a}</li>
           ))}
         </ul>{" "}
       </div>
@@ -71,7 +71,7 @@ const Projects = () => {
 
                 {/* Date on the Line */}
                 <div
-                  className=" h-8 px-2 flex items-center justify-center ml-4 bg-teal-300 border border-gray-400 shadow-2xl shadow-black
+                  className="h-8 px-2 flex items-center justify-center ml-4 bg-teal-300 border border-gray-400 shadow-2xl shadow-black
               text-gray-800 rounded-md absolute left-1/4 transform -translate-x-1/2"
                 >
                   {event.date}
@@ -82,7 +82,7 @@ const Projects = () => {
                   <div className="px-8 w-full lg:w-7/12 text-sm md:text-md flex-col  py-4 dark:text-slate-400 text-gray-600 ">
                     {returnBullets(event.content)}
                   </div>
-                  <div className=" p-2  w-full lg:w-5/12 border rounded-xl dark:border-slate-600 shadow-2xl dark:text-slate-400 text-gray-600 ">
+                  <div className="p-2 w-full lg:w-5/12 border rounded-xl dark:border-slate-600 shadow-2xl dark:text-slate-400 text-gray-600 ">
                     <div
                       class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden "
                       style={{ width: "100%", height: "100%" }}

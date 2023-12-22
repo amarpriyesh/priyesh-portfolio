@@ -6,16 +6,12 @@ import Layout from "./layout";
 import Projects from "./projects";
 import WorkEx from "./workex";
 
-
-
 export default function WorkExperience() {
-
   return (
     <Layout title="Priyesh's Portfolio">
-    <WorkEx />
-  
-    {/* Rest of your home page content */}
-  </Layout>
-   
+      <WorkEx />
+
+      {/* Rest of your home page content */}
+    </Layout>
   );
 }

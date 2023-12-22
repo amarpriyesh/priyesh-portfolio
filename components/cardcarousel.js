@@ -1,6 +1,6 @@
 import Slider from "react-slick";
 import Carousel from "./carousel";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState } from "react";
 // ... other imports
@@ -11,7 +11,7 @@ const CardCarousel = ({ cardsData, autoPlaySpeed = 2000 }) => {
   const getSlideClass = (index) => {
     return index === currentSlide ? "slide-current" : "slide-blurred";
   };
-  
+
   const CustomPrevArrow = ({ onClick }) => (
     <button className="slick-arrow  slick-prev fill-black" onClick={onClick}>
       <svg
@@ -29,7 +29,7 @@ const CardCarousel = ({ cardsData, autoPlaySpeed = 2000 }) => {
       </svg>
     </button>
   );
-  
+
   const CustomNextArrow = ({ onClick }) => (
     <button className="slick-arrow slick-next" onClick={onClick}>
       <svg
@@ -48,8 +48,6 @@ const CardCarousel = ({ cardsData, autoPlaySpeed = 2000 }) => {
     </button>
   );
 
-
-
   const settings = {
     dots: true,
     infinite: true,
@@ -61,12 +59,11 @@ const CardCarousel = ({ cardsData, autoPlaySpeed = 2000 }) => {
     autoplaySpeed: autoPlaySpeed,
     beforeChange: (current, next) => setCurrentSlide(next),
     responsive: [
-    
       {
         breakpoint: 768, // Medium screens
         settings: {
           slidesToShow: 1,
-          centerPadding: '0px',
+          centerPadding: "0px",
           centerMode: true,
         },
       },
@@ -74,7 +71,7 @@ const CardCarousel = ({ cardsData, autoPlaySpeed = 2000 }) => {
         breakpoint: 1200, // Extra large screens
         settings: {
           slidesToShow: 2,
-          centerPadding: '0px',
+          centerPadding: "0px",
           centerMode: true,
         },
       },
@@ -83,14 +80,19 @@ const CardCarousel = ({ cardsData, autoPlaySpeed = 2000 }) => {
     nextArrow: <CustomNextArrow />,
   };
 
-
-
   return (
-    <div  tabIndex={0} >
-      <Slider {...settings} >
+    <div tabIndex={0}>
+      <Slider {...settings}>
         {cardsData.map((card, idx) => (
-          <div  className={`${getSlideClass(idx)}`} key={idx} >
-          <Carousel   key={idx} title={card.title} content={card.content} image={card.image} idx={idx} currentSlideV={currentSlide}/>
+          <div className={`${getSlideClass(idx)}`} key={idx}>
+            <Carousel
+              key={idx}
+              title={card.title}
+              content={card.content}
+              image={card.image}
+              idx={idx}
+              currentSlideV={currentSlide}
+            />
           </div>
         ))}
       </Slider>
