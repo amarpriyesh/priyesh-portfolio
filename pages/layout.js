@@ -1,5 +1,14 @@
 import Head from "next/head";
-import { BsFillMoonStarsFill, BsMoonStars, BsX, BsDownload, BsCode, BsWindowDesktop, BsHouse, BsList} from "react-icons/bs";
+import {
+  BsFillMoonStarsFill,
+  BsMoonStars,
+  BsX,
+  BsDownload,
+  BsCode,
+  BsWindowDesktop,
+  BsHouse,
+  BsList,
+} from "react-icons/bs";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
@@ -17,7 +26,6 @@ const ExploreSlider = ({ isOpen, onClose }) => {
   const isActive = (pathname) => router.pathname === pathname;
   return (
     <>
-   
       <div className={` ${isOpen ? "overlay" : ""}`}></div>
       <div className={`slider-container  bg-teal-300 ${isOpen ? "open" : ""}`}>
         <div className={`slider-content  bg-teal-300 ${isOpen ? "open" : ""}`}>
@@ -34,16 +42,24 @@ const ExploreSlider = ({ isOpen, onClose }) => {
                 isActive("/") ? "text-white dark:text-purple-400" : ""
               } `}
             >
-            
-              <Link href="/" className="flex text-2xl"> <BsHouse className=" text-3xl mr-2"/> <span className="hidden md:block">Home</span>  {/* This is the clickable part */}</Link>
+              <Link href="/" className="flex text-2xl">
+                {" "}
+                <BsHouse className=" text-3xl mr-2" />{" "}
+                <span className="hidden md:block">Home</span>{" "}
+                {/* This is the clickable part */}
+              </Link>
             </li>
             <li
               className={` ${
                 isActive("/projects") ? "text-white dark:text-purple-400 " : ""
               }`}
             >
-              <Link href="/projects" className="flex text-2xl"> <BsCode className=" text-3xl mr-2"/> <span className="hidden md:block">Projects</span>  {/* This is the clickable part */}</Link>
-
+              <Link href="/projects" className="flex text-2xl">
+                {" "}
+                <BsCode className=" text-3xl mr-2" />{" "}
+                <span className="hidden md:block">Projects</span>{" "}
+                {/* This is the clickable part */}
+              </Link>
             </li>
             <li
               className={` ${
@@ -52,8 +68,12 @@ const ExploreSlider = ({ isOpen, onClose }) => {
                   : ""
               }`}
             >
-            <Link href="/workexperience" className="flex text-2xl"> <BsWindowDesktop className=" text-3xl mr-2"/> <span className="hidden md:block">Work Experience</span>  {/* This is the clickable part */}</Link>
-
+              <Link href="/workexperience" className="flex text-2xl">
+                {" "}
+                <BsWindowDesktop className=" text-3xl mr-2" />{" "}
+                <span className="hidden md:block">Work Experience</span>{" "}
+                {/* This is the clickable part */}
+              </Link>
             </li>
           </ul>
         </div>
@@ -78,7 +98,6 @@ const Layout = ({ children, title = "Default Title" }) => {
   };
 
   return (
-
     <div className={`${darkMode ? "dark" : ""} `}>
       <main className="bg-transparent  dark:bg-gray-900">
         <div className={` min-h-screen ${sliderMode ? "divide-x" : ""}`}>
@@ -90,25 +109,21 @@ const Layout = ({ children, title = "Default Title" }) => {
               />
             </div>
 
-      
-
             <div
               className={`  ${sliderMode ? "w-4/5" : "w-full"}`}
               onClick={() =>
                 sliderMode ? dispatch({ type: "toggleSlider" }) : ""
               }
             >
-
-
-       
-    
-         
               <nav className="pt-5 p-5 flex justify-between font-burtons dark:text-white  bg-gradient-to-b from-teal-500 w-full">
                 <div className="justify-start flex">
-                  <h1 onClick={() => dispatch({ type: "toggleSlider" })} className="items-center flex-col flex hover:cursor-pointer">
-                  <BsList className=" block text-3xl hover:scale-125 "/>
-                  <span className="md:block hidden"> More </span> {/* This is the clickable part */}
-                      
+                  <h1
+                    onClick={() => dispatch({ type: "toggleSlider" })}
+                    className="items-center flex-col flex hover:cursor-pointer"
+                  >
+                    <BsList className=" block text-3xl hover:scale-125 " />
+                    <span className="md:block hidden"> More </span>{" "}
+                    {/* This is the clickable part */}
                   </h1>
 
                   <ul className="flex p3-3 md:ps-10">
@@ -118,9 +133,9 @@ const Layout = ({ children, title = "Default Title" }) => {
                       } `}
                     >
                       <Link href="/" className="items-center flex-col flex">
-                      <BsHouse className=" block text-3xl hover:scale-125 "/>
-                      <span className="md:block hidden"> Home </span> {/* This is the clickable part */}
-                   
+                        <BsHouse className=" block text-3xl hover:scale-125 " />
+                        <span className="md:block hidden"> Home </span>{" "}
+                        {/* This is the clickable part */}
                       </Link>
                     </li>
                     <li
@@ -130,10 +145,13 @@ const Layout = ({ children, title = "Default Title" }) => {
                           : ""
                       }`}
                     >
-                      <Link href="/projects" className="items-center flex-col flex">
-                      <BsCode className=" block text-3xl  hover:scale-125"/>
-                      <span className="md:block hidden"> Projects </span> {/* This is the clickable part */}
-                      
+                      <Link
+                        href="/projects"
+                        className="items-center flex-col flex"
+                      >
+                        <BsCode className=" block text-3xl  hover:scale-125" />
+                        <span className="md:block hidden"> Projects </span>{" "}
+                        {/* This is the clickable part */}
                       </Link>
                     </li>
                     <li
@@ -143,10 +161,16 @@ const Layout = ({ children, title = "Default Title" }) => {
                           : ""
                       } `}
                     >
-                      <Link href="/workexperience" className="items-center flex-col flex">
-                      <BsWindowDesktop className=" block text-3xl hover:scale-125 "/>
-                      <span className="md:block hidden"> Work Experience </span> {/* This is the clickable part */}
-                      
+                      <Link
+                        href="/workexperience"
+                        className="items-center flex-col flex"
+                      >
+                        <BsWindowDesktop className=" block text-3xl hover:scale-125 " />
+                        <span className="md:block hidden">
+                          {" "}
+                          Work Experience{" "}
+                        </span>{" "}
+                        {/* This is the clickable part */}
                       </Link>
                     </li>
                   </ul>
@@ -157,7 +181,6 @@ const Layout = ({ children, title = "Default Title" }) => {
                       <BsMoonStars
                         className="cursor-pointer text-3xl dark:fill-white hover:scale-125"
                         onClick={() => dispatch({ type: "toggleDark" })}
-                        
                       />
                       <span className="hidden md:block">Dark Mode</span>
                     </li>
@@ -175,16 +198,15 @@ const Layout = ({ children, title = "Default Title" }) => {
                 </div>
               </nav>
               <div className="px-10 md:px-20 lg:px-40">
-              {/* {darkMode ? 
+                {/* {darkMode ? 
               <TwinklingBackground children={children}/> : children} */}
-              
-              {children}
+
+                {children}
               </div>
 
               {/* <div className="px-10 md:px-20 lg:px-40">
                 <Front />
               </div> */}
-            
             </div>
           </div>
         </div>
