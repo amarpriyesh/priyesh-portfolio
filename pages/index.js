@@ -4,10 +4,14 @@ import Front from "./front";
 import { useState } from "react";
 import Layout from "./layout";
 import Projects from "./projects";
-
+import TwinklingBackground from "@/components/stars";
+import MovingClouds from "@/components/movingcloud";
+import { useSelector } from "react-redux";
 
 
 export default function Home() {
+
+  const darkMode = useSelector((state) => state.darkMode.value);
 
 
 
@@ -20,7 +24,10 @@ export default function Home() {
     <link rel="icon" href="/favicon.ico" />
   </Head>
     <Layout title="Priyesh's Portfolio">
-    <Front/>
+    {darkMode? <TwinklingBackground Children={Front}/> :<MovingClouds Children={Front}/> }
+   
+    
+  
   
     {/* Rest of your home page content */}
   </Layout>
