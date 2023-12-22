@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import React, { useReducer } from "react";
 import { darkModeReducer } from "../components/reducers";
+import TwinklingBackground from "@/components/stars";
 
 const ExploreSlider = ({ isOpen, onClose }) => {
   const router = useRouter();
@@ -16,6 +17,7 @@ const ExploreSlider = ({ isOpen, onClose }) => {
   const isActive = (pathname) => router.pathname === pathname;
   return (
     <>
+   
       <div className={` ${isOpen ? "overlay" : ""}`}></div>
       <div className={`slider-container  bg-teal-300 ${isOpen ? "open" : ""}`}>
         <div className={`slider-content  bg-teal-300 ${isOpen ? "open" : ""}`}>
@@ -50,7 +52,7 @@ const ExploreSlider = ({ isOpen, onClose }) => {
                   : ""
               }`}
             >
-            <Link href="/workexperience" className="flex text-2xl"> <BsHouse className=" text-3xl mr-2"/> <span className="hidden md:block">Work Experience</span>  {/* This is the clickable part */}</Link>
+            <Link href="/workexperience" className="flex text-2xl"> <BsWindowDesktop className=" text-3xl mr-2"/> <span className="hidden md:block">Work Experience</span>  {/* This is the clickable part */}</Link>
 
             </li>
           </ul>
@@ -76,8 +78,9 @@ const Layout = ({ children, title = "Default Title" }) => {
   };
 
   return (
+
     <div className={`${darkMode ? "dark" : ""} `}>
-      <main className="bg-white  dark:bg-gray-900">
+      <main className="bg-transparent  dark:bg-gray-900">
         <div className={` min-h-screen ${sliderMode ? "divide-x" : ""}`}>
           <div className="flex">
             <div className={` ${sliderMode ? "w-1/5" : "w-0"}`}>
@@ -87,12 +90,19 @@ const Layout = ({ children, title = "Default Title" }) => {
               />
             </div>
 
+      
+
             <div
               className={`  ${sliderMode ? "w-4/5" : "w-full"}`}
               onClick={() =>
                 sliderMode ? dispatch({ type: "toggleSlider" }) : ""
               }
             >
+
+
+       
+    
+         
               <nav className="pt-5 p-5 flex justify-between font-burtons dark:text-white  bg-gradient-to-b from-teal-500 w-full">
                 <div className="justify-start flex">
                   <h1 onClick={() => dispatch({ type: "toggleSlider" })} className="items-center flex-col flex hover:cursor-pointer">
@@ -164,11 +174,17 @@ const Layout = ({ children, title = "Default Title" }) => {
                   </ul>
                 </div>
               </nav>
-              <div className="px-10 md:px-20 lg:px-40">{children}</div>
+              <div className="px-10 md:px-20 lg:px-40">
+              {/* {darkMode ? 
+              <TwinklingBackground children={children}/> : children} */}
+              
+              {children}
+              </div>
 
               {/* <div className="px-10 md:px-20 lg:px-40">
                 <Front />
               </div> */}
+            
             </div>
           </div>
         </div>
