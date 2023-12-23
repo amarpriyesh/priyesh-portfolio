@@ -15,7 +15,8 @@ module.exports = {
         burtons: "burtons",
       },
       screens: {
-        'xs': '400px', // You can set this value to whatever you prefer
+        'xs': '400px', 
+        'md': '768px'// You can set this value to whatever you prefer
       },
 
     },

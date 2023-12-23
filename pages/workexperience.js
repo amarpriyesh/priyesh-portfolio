@@ -7,6 +7,7 @@ import Projects from "./projects";
 import WorkEx from "./workex";
 
 export default function WorkExperience() {
+    
   return (
     <Layout title="Priyesh's Portfolio">
       <WorkEx />
@@ -14,4 +15,4 @@ export default function WorkExperience() {
       {/* Rest of your home page content */}
     </Layout>
   );
-}
+  }

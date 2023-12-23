@@ -3,7 +3,7 @@ const CardMap = ({ data }) => {
   return (
     <div className=" lg:flex lg:flex-wrap mb-20">
       {data.map((items, idx) => (
-        <div key={idx} className="lg:w-1/3 px-4 h-96 mt-4">
+        <div key={idx} className="lg:w-1/3 px-4 py-2 mt-4">
           <Card data={items} key={idx} />
         </div>
       ))}

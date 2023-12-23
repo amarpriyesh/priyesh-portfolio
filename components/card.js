@@ -2,7 +2,7 @@ const Card = ({ data }) => {
   const lines = data.description.split("\n");
 
   return (
-    <div className="flex flex-col border items-center text-center shadow-2xl pt-10 px-10 rounded-xl h-full ">
+    <div className="flex flex-col border items-center text-center py-10 shadow-2xl pt-10 px-10 rounded-xl h-full ">
       <div className="inline-block transition-transform duration-300 hover:scale-125">
         <img src="/design.png" width={100} height={100} />
       </div>
