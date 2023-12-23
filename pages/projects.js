@@ -14,11 +14,26 @@ const Projects = () => {
       </div>
     );
   };
+
+  const returnTechnology = (text) => {
+    const arr = text.split(",");
+    return (
+      <div className="flex flex-wrap gap-1 my-1">
+    
+        
+          {arr.map((a, key) => (
+            <div key={key} className=" bg-teal-300 rounded-lg px-2 text-xs drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black"> {a}</div>
+          ))}
+        
+      </div>
+    );
+  };
   const events = [
     {
-      date: "Jul 2022",
-      company: "Charles River Development",
-      title: "Software Development Intern",
+      date: "Dec 2021",
+      company: "Northeastern University",
+      title: "Smart Savr",
+      technology: "Java, Python",
       content: `"Details of event 1jjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkk
             kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
             kkkkkkkkkkkkkkkkkk
@@ -35,12 +50,14 @@ const Projects = () => {
     {
       date: "Mar 2019",
       company: "Charles River Development",
+      technology: "Java, Python",
       title: "Event 2",
       content: "Details of event 2...",
     },
     {
       date: "Feb 2021",
       company: "Charles River Development",
+      technology: "Java, Python , Python, Python, Python, Python, Python, Python, Python, Python, Python", 
       title: "Event 3",
       content: "Details of event 3...",
     },
@@ -67,6 +84,7 @@ const Projects = () => {
                   <div className=" px-2 dark:text-slate-400 text-gray-600">
                     {event.company}
                   </div>
+                  <div> {returnTechnology(event.technology)}</div>
                 </div>
 
                 
