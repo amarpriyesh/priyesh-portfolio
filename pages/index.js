@@ -7,6 +7,7 @@ import Projects from "./projects";
 import TwinklingBackground from "@/components/stars";
 import MovingClouds from "@/components/movingcloud";
 import { useSelector } from "react-redux";
+import Mailer from "./mail";
 
 export default function Home() {
   const darkMode = useSelector((state) => state.darkMode.value);
@@ -28,6 +29,9 @@ export default function Home() {
 
         {/* Rest of your home page content */}
       </Layout>
+      
+      
+
     </div>
   );
 }

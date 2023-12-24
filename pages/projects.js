@@ -1,6 +1,15 @@
 import Layout from "./layout";
+import React, { useState, useEffect } from 'react';
 
 const Projects = () => {
+    const [filter, setFilter] = useState({})
+    
+    let mapFilter = {}
+
+
+
+
+   
   const returnBullets = (text) => {
     const arr = text.split("\n");
     return (
@@ -28,45 +37,129 @@ const Projects = () => {
       </div>
     );
   };
-  const events = [
+  const list = [
     {
-      date: "Dec 2021",
+        date: "Dec 2023",
+        company: "Northeastern University",
+        title: "Trending Stock Market WebSite",
+        git: [],
+        technology: "JavaScript, React, Next.js, Node, HTML, CSS, Tailwind, JWT tokens, SSL/TLS cert, git, linux, keyframes",
+        youtube: "",
+        content: `Architected and developed a full-stack stock market trend analysis platform using the MERN stack, integrating real-time financial data display with interactive features such as commenting, liking, and viewing posts, leveraging technologies like MongoDB, Express.js, React.js, Node.js, and Bootstrap for a responsive design.
+Implemented advanced web functionalities including JWT-based state and session management, Redis caching for optimized data retrieval, OAuth for secure third-party authentication, and data encryption, ensuring a secure and seamless end-user experience with efficient load times and robust security protocols.`,
+      },
+
+    {
+        date: "May 2022",
+        company: "Northeastern University",
+        title: "Trending Stock Market WebSite",
+        git: ["https://github.com/amarpriyesh/final-project-tuiter-node", "https://github.com/amarpriyesh/final-project-tuiter-react"],
+        technology: "JavaScript, React, Express, Axios, MongoDB, Node, MERN, HTML, CSS, Bootstrap, JWT tokens, Redis, git, linux",
+        youtube: "",
+        content: `Architected and developed a full-stack stock market trend analysis platform using the MERN stack, integrating real-time financial data display with interactive features such as commenting, liking, and viewing posts, leveraging technologies like MongoDB, Express.js, React.js, Node.js, and Bootstrap for a responsive design.
+Implemented advanced web functionalities including JWT-based state and session management, Redis caching for optimized data retrieval, OAuth for secure third-party authentication, and data encryption, ensuring a secure and seamless end-user experience with efficient load times and robust security protocols.`,
+      },
+   
+{
+    date: "Apr 2023",
+    company: "Northeastern University",
+    title: "Visulization BI tool",
+    git: ["https://github.com/amarpriyesh/visualization-app"],
+    technology: "Python, Tkinter, Matplotlib, Pandas",
+    youtube: "",
+    content: `Engineered a dynamic data visualization tool in Python utilizing libraries such as Pandas for data manipulation, Matplotlib for plotting, and NumPy for numerical computations, incorporating Tkinter to create an interactive GUI that enables users to select datasets, graph types, and variables for customized visual analysis.
+ Designed and implemented a robust graphical user interface using Tkinter, allowing for intuitive user interaction with complex datasets, and integrated Matplotlib to render a variety of plots, such as scatter, bar, and line graphs, facilitating insightful data exploration and pattern recognition.`,
+ },
+{
+      date: "May 2023",
       company: "Northeastern University",
       title: "Smart Savr",
-      technology: "Java, Python",
-      content: `"Details of event 1jjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkk
-            kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-            kkkkkkkkkkkkkkkkkk
-            Details of event 1jjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkk
-            kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-            kkkkkkkkkkkkkkkkkk
-            Details of event 1jjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkk
-            kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-            kkkkkkkkkkkkkkkkkk
-            Details of event 1jjjjjjjjjjjjjjjjjjjjkkkkkkkkkkkkk
-            kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-            kkkkkkkkkkkkkkkkkk"`,
+      git: ["https://github.com/amarpriyesh/SmartSavr"],
+      technology: "Java, Android, kotlin, Firestore, Gradle",
+      youtube: "",
+      content: `Developed an Android application called "Smart Saver" that enables parents to monitor their child's chores and rewards.
+      Incorporated sensors and features such as GPS, camera, intents, notifications, recycler views, and fragments to enhance the UI.`,
+    },
+
+ 
+    {
+      date: "Mar 2023",
+      company: "Northeastern University",
+      title: "Weather App",
+      git: ["https://github.com/amarpriyesh/SmartSavr"],
+      technology: "Java, Android, kotlin, Firestore, Gradle, Retrofit",
+      youtube: "",
+      content: `Developed an intuitive Android weather application using Java and Kotlin in Android Studio, integrating Retrofit for robust network operations, parsing JSON data from a third-party API, resulting in a seamless user experience for real-time weather updates.
+Implemented a RecyclerView to efficiently display daily weather forecasts, incorporating Material Design principles for a visually appealing interface; optimized app performance through meticulous testing and debugging, ensuring reliability and high user satisfaction.`,
     },
     {
-      date: "Mar 2019",
-      company: "Charles River Development",
-      technology: "Java, Python",
-      title: "Event 2",
-      content: "Details of event 2...",
-    },
+        date: "May 2022",
+        company: "Northeastern University",
+        title: "Tuiter Website (Twitter)",
+        git: ["https://github.com/amarpriyesh/final-project-tuiter-node", "https://github.com/amarpriyesh/final-project-tuiter-react"],
+        technology: "JavaScript, React, Express, Jest, Axios, MongoDB, Node, MERN, HTML, CSS, Bootstrap",
+        youtube: "/sun.png",
+        content: `Developed front end and back end of a social media website called Tuiter using MERN Stack technologies such as Mongoose, Express, JavaScript, TypeScript, Bootstrap, and React.js, further exposed REST APIs to serve HTTP requests on a Node.js server.`,
+      },
     {
-      date: "Feb 2021",
-      company: "Charles River Development",
-      technology: "Java, Python , Python, Python, Python, Python, Python, Python, Python, Python, Python", 
-      title: "Event 3",
-      content: "Details of event 3...",
+      date: "Nov 2021",
+      company: "Northeastern University",
+      technology: "Java, Junit, Swing, MVC, OOPS", 
+      title: "PAC Man with Dungeons Game",
+      youtube:"https://www.youtube.com/embed/aSVG7jiO6sY",
+      git: ["https://github.com/amarpriyesh/Pac-Man-Adventure-Game"],
+      content: `Constructed an adventure game using MVC principles and object-oriented design patterns to make the gameplay realistic.
+      Tested project modules using a JUnit 4 test suite, achieving 86% coverage. Implemented the game's view using Java Swing library.`,
     },
     // ... more events
   ];
+
+  const [events, setEvents] = useState(list)
+
+  const eventFilter = () => {
+    console.log(filter)
+   const fil =  Object.entries(filter).filter(([key, value]) => value === true).map(([key]) => key)
+
+   console.log(fil)
+   let newList = []
+   if (fil.length === 0 ) {
+    newList = list 
+   }
+   else {
+    newList = list.filter((item, index) => {
+        return fil.some(filterItem =>   item.technology.toLowerCase().split(",").map(a => a.trim()).includes(filterItem) );
+      });
+
+   }
+
+ 
+
+  setEvents(newList)
+
+   
+  }
+
+  const filterItems = () => {
+    return (
+        <div className="flex-wrap flex  gap-2 md:text-base sm:text-sm text-xs md-gap-1 ">
+            {Object.entries(filter).map(([key, value], index) => ( <div className={`${value ? "bg-teal-300" :  "bg-slate-400" } rounded-lg px-1 md:px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black hover:cursor-pointer`} onClick={() => {setFilter({...filter, [key]:!value} ) }  } key={index}>{key}</div>))}
+        </div>
+    )
+
+  }
+  
+
+  useEffect(() => {
+events.map( a => a.technology.split(",").map(b => mapFilter[b.trim().toLowerCase()] = false))
+setFilter(mapFilter)
+  },[]) 
+
+  useEffect( () => {eventFilter()},[filter])
   return (
     <Layout title="Priyesh's Portfolio">
       {
         <div className="flex flex-col items-start justify-start w-full  ">
+        <div className=" md:my-4 my-2"><div className="dark:text-slate-300 text-gray-600 md:text-xl text-lg ">Filter Results:</div>{filterItems()}</div>
           <div className="relative w-full">
             {/* Vertical Line */}
             <div className="absolute  transform -translate-x-1/4 w-0.5 mx-4 dark:bg-purple-400 bg-gray-400 h-full" style={{left:"27%" }} />
@@ -110,19 +203,21 @@ const Projects = () => {
                     {returnBullets(event.content)}
                   </div>
                   <div className="p-2 w-full lg:w-5/12 border rounded-xl dark:border-slate-600 shadow-2xl dark:text-slate-400 text-gray-600 ">
-                    <div
+                    {!event.youtube.includes("youtube") ? <div  ><img src={event.youtube}
+                     layout="fill"></img></div>:<div
                       class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden "
                       style={{ width: "100%", height: "100%" }}
                     >
                       <iframe
                         class="relative top-0 left-0 w-full h-full"
-                        src="https://www.youtube.com/embed/aSVG7jiO6sY"
+                        src={event.youtube}
                         title="YouTube video"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                         allowFullScreen
                       ></iframe>
                     </div>
+                    }
                   </div>
                 </div>
               </div>
