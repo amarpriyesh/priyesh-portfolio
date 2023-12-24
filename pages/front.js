@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import Image from "next/image";
 import profile from "../public/profile.png";
 import design from "../public/design.png";
+import Mailer from "./mail";
 
 import Carousel from "@/components/carousel";
 import CardCarousel from "@/components/cardcarousel";
@@ -132,7 +133,9 @@ Implementing data storage solutions and writing efficient queries.`,
       <div className="text-gray-800">
         <CardCarousel cardsData={data} />
       </div>
-      <section className="mt-10">Contacts</section>
+      <section className="mt-10">Contacts
+      <Mailer/>
+      </section>
     </>
   );
 };
