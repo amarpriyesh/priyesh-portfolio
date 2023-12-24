@@ -24,7 +24,7 @@ const Mailer = () => {
         console.log('Sending mail with the following data:', mailData);
 
         try {
-            const response = await axios.post('http://localhost:4000/api/index', {
+            const response = await axios.post('https://events-app-hhd0.onrender.com/api/index', {
               ...mailData
             });
       
