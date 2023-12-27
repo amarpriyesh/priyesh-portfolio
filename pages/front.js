@@ -148,7 +148,7 @@ Implementing data storage solutions and writing efficient queries.`,
           Project Gallery:
         </div>
         <p className="text-md  md:pb-4 leadin-8 text-gray-800 max-w-xl mx-auto dark:text-slate-400">
-          Below are major projects I worked on, please click on the title to know more about specific projects. You can also go to <a href="/projects" className="text-teal-600"><span>Projects</span></a> tab to view all projects.
+          Below are major projects I worked on, please click on the title to know more about specific projects. You can also go to <Link href="/projects" className="text-teal-600"><span>Projects</span></Link> tab to view all projects.
         </p>
         <div className>
           <CardCarousel cardsData={data} />
