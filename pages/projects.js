@@ -41,10 +41,10 @@ const Projects = () => {
     {
         date: "Dec 2023",
         company: "Northeastern University",
-        title: "Trending Stock Market WebSite",
+        title: "Portfolio",
         git: [],
         technology: "JavaScript, React, Next.js, Node, HTML, CSS, Tailwind, JWT tokens, SSL/TLS cert, git, linux, keyframes",
-        youtube: "",
+        youtube: "/Portfolio.png",
         content: `Architected and developed a full-stack stock market trend analysis platform using the MERN stack, integrating real-time financial data display with interactive features such as commenting, liking, and viewing posts, leveraging technologies like MongoDB, Express.js, React.js, Node.js, and Bootstrap for a responsive design.
 Implemented advanced web functionalities including JWT-based state and session management, Redis caching for optimized data retrieval, OAuth for secure third-party authentication, and data encryption, ensuring a secure and seamless end-user experience with efficient load times and robust security protocols.`,
       },
@@ -55,7 +55,7 @@ Implemented advanced web functionalities including JWT-based state and session m
         title: "Trending Stock Market WebSite",
         git: ["https://github.com/amarpriyesh/final-project-tuiter-node", "https://github.com/amarpriyesh/final-project-tuiter-react"],
         technology: "JavaScript, React, Express, Axios, MongoDB, Node, MERN, HTML, CSS, Bootstrap, JWT tokens, Redis, git, linux",
-        youtube: "",
+        youtube: "/stockmarket.png",
         content: `Architected and developed a full-stack stock market trend analysis platform using the MERN stack, integrating real-time financial data display with interactive features such as commenting, liking, and viewing posts, leveraging technologies like MongoDB, Express.js, React.js, Node.js, and Bootstrap for a responsive design.
 Implemented advanced web functionalities including JWT-based state and session management, Redis caching for optimized data retrieval, OAuth for secure third-party authentication, and data encryption, ensuring a secure and seamless end-user experience with efficient load times and robust security protocols.`,
       },
@@ -66,17 +66,17 @@ Implemented advanced web functionalities including JWT-based state and session m
     title: "Visulization BI tool",
     git: ["https://github.com/amarpriyesh/visualization-app"],
     technology: "Python, Tkinter, Matplotlib, Pandas",
-    youtube: "",
+    youtube: "/visualization.png",
     content: `Engineered a dynamic data visualization tool in Python utilizing libraries such as Pandas for data manipulation, Matplotlib for plotting, and NumPy for numerical computations, incorporating Tkinter to create an interactive GUI that enables users to select datasets, graph types, and variables for customized visual analysis.
  Designed and implemented a robust graphical user interface using Tkinter, allowing for intuitive user interaction with complex datasets, and integrated Matplotlib to render a variety of plots, such as scatter, bar, and line graphs, facilitating insightful data exploration and pattern recognition.`,
  },
 {
       date: "May 2023",
       company: "Northeastern University",
-      title: "Smart Savr",
+      title: "Smart Savr Wallet App",
       git: ["https://github.com/amarpriyesh/SmartSavr"],
       technology: "Java, Android, kotlin, Firestore, Gradle",
-      youtube: "",
+      youtube: "/smartsavrcharts.png",
       content: `Developed an Android application called "Smart Saver" that enables parents to monitor their child's chores and rewards.
       Incorporated sensors and features such as GPS, camera, intents, notifications, recycler views, and fragments to enhance the UI.`,
     },
@@ -88,7 +88,7 @@ Implemented advanced web functionalities including JWT-based state and session m
       title: "Weather App",
       git: ["https://github.com/amarpriyesh/SmartSavr"],
       technology: "Java, Android, kotlin, Firestore, Gradle, Retrofit",
-      youtube: "",
+      youtube: "/weatherapp.png",
       content: `Developed an intuitive Android weather application using Java and Kotlin in Android Studio, integrating Retrofit for robust network operations, parsing JSON data from a third-party API, resulting in a seamless user experience for real-time weather updates.
 Implemented a RecyclerView to efficiently display daily weather forecasts, incorporating Material Design principles for a visually appealing interface; optimized app performance through meticulous testing and debugging, ensuring reliability and high user satisfaction.`,
     },
@@ -98,7 +98,7 @@ Implemented a RecyclerView to efficiently display daily weather forecasts, incor
         title: "Tuiter Website (Twitter)",
         git: ["https://github.com/amarpriyesh/final-project-tuiter-node", "https://github.com/amarpriyesh/final-project-tuiter-react"],
         technology: "JavaScript, React, Express, Jest, Axios, MongoDB, Node, MERN, HTML, CSS, Bootstrap",
-        youtube: "/sun.png",
+        youtube: "/tuiter-message.png",
         content: `Developed front end and back end of a social media website called Tuiter using MERN Stack technologies such as Mongoose, Express, JavaScript, TypeScript, Bootstrap, and React.js, further exposed REST APIs to serve HTTP requests on a Node.js server.`,
       },
     {
@@ -150,6 +150,10 @@ Implemented a RecyclerView to efficiently display daily weather forecasts, incor
   
 
   useEffect(() => {
+    mapFilter["java"] = false
+    mapFilter["python"] = false
+    mapFilter["javascript"] = false
+    mapFilter["javascript"] = false
 events.map( a => a.technology.split(",").map(b => mapFilter[b.trim().toLowerCase()] = false))
 setFilter(mapFilter)
   },[]) 
@@ -167,6 +171,7 @@ setFilter(mapFilter)
             {events.map((event, index) => (
               <div
                 key={index}
+                id={event.title}
                 className="flex items-center my-4 w-full relative px-1"
               >
                 {/* Event Title on the Left */}
@@ -203,9 +208,9 @@ setFilter(mapFilter)
                     {returnBullets(event.content)}
                   </div>
                   <div className="p-2 w-full lg:w-5/12 border rounded-xl dark:border-slate-600 shadow-2xl dark:text-slate-400 text-gray-600 ">
-                    {!event.youtube.includes("youtube") ? <div  ><img src={event.youtube}
-                     layout="fill"></img></div>:<div
-                      class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden "
+                    {!event.youtube.includes("youtube") ? <div  ><img className="aspect-square" src={event.youtube}
+                   ></img></div>:<div
+                      class="aspect-square rounded-lg overflow-hidden "
                       style={{ width: "100%", height: "100%" }}
                     >
                       <iframe
