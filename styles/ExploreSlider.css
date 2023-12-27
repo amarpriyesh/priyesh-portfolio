@@ -211,9 +211,9 @@
   animation-play-state: paused;
 }
 
-.bg-transparent {
+.bg-transparent-white {
 
-  background-color: rgba(255, 255, 255, 1); /* For browsers that support it */
+  background-color: rgba(255, 255, 255, 0.8); /* For browsers that support it */
 
    /* Fallback color */
 }

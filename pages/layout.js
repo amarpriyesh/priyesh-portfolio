@@ -37,7 +37,7 @@ const ExploreSlider = ({ isOpen, onClose }) => {
               <BsX onClick={onClose} className="h-7 w-7" />
             </div>
           </div>
-          <ul className=" flex flex-col justify-start p-3 gap-3">
+          <ul className=" flex flex-col justify-start p-3 gap-3 text-black">
             <li
               className={` ${
                 isActive("/") ? "text-white dark:text-purple-400" : ""
@@ -100,7 +100,7 @@ const Layout = ({ children, title = "Default Title" }) => {
 
   return (
     <div className={`${darkMode ? "dark" : ""} `}>
-      <main className="bg-white  dark:bg-gray-900 z-8">
+      <main className="bg-transparent-white  dark:bg-gray-900 z-8">
         <div className={` min-h-screen ${sliderMode ? "divide-x" : ""}`}>
           <div className="flex">
             <div className={` ${sliderMode ? "w-1/5" : "w-0"}`}>
@@ -127,7 +127,7 @@ const Layout = ({ children, title = "Default Title" }) => {
                     {/* This is the clickable part */}
                   </h1>
 
-                  <ul className="flex p3-3 md:ps-10">
+                  <ul className="flex p3-3 md:ps-10 text-black">
                     <li
                       className={`pl-3 md:pl-10 ${
                         isActive("/") ? "text-white dark:text-purple-400" : ""
