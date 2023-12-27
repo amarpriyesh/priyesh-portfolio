@@ -7,7 +7,7 @@ export default function MovingClouds({Children}) {
           <div className="sun opacity-0" style={{ left: '10%' }}></div>
           </div>
         
-      <div className="relative h-full w-screen dark:hidden   animated-element" style={{  top: '150px' , }}>
+      <div className="relative h-full w-screen dark:hidden animated-element" style={{  top: '150px' , }}>
         {/* Clouds */}
         <div className="cloud opacity-0" style={{ left: '0%' , scale:"160%" }}></div>
      
