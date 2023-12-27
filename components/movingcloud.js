@@ -3,11 +3,11 @@ import Front from "@/pages/front";
 export default function MovingClouds({Children}) {
     return (
         <div className="relative">
-          <div className="relative h-full w-screen dark:hidden   animated-element" style={{  top: '-100px' , scale:"150%" }}>
+          <div className="relative h-full w-screen dark:hidden   animated-element" style={{  top: '-100px' , scale:"150%",  zIndex: "9" }}>
           <div className="sun opacity-0" style={{ left: '10%' }}></div>
           </div>
         
-      <div className="relative h-full w-screen dark:hidden animated-element" style={{  top: '150px' , }}>
+      <div className="relative h-full w-screen dark:hidden animated-element" style={{  top: '150px' , zIndex: "9" }}>
         {/* Clouds */}
         <div className="cloud opacity-0" style={{ left: '0%' , scale:"160%" }}></div>
      

@@ -8,6 +8,7 @@ import {
   BsWindowDesktop,
   BsHouse,
   BsList,
+  BsSun
 } from "react-icons/bs";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -99,7 +100,7 @@ const Layout = ({ children, title = "Default Title" }) => {
 
   return (
     <div className={`${darkMode ? "dark" : ""} `}>
-      <main className="bg-transparent  dark:bg-gray-900">
+      <main className="bg-white  dark:bg-gray-900 z-8">
         <div className={` min-h-screen ${sliderMode ? "divide-x" : ""}`}>
           <div className="flex">
             <div className={` ${sliderMode ? "w-1/5" : "w-0"}`}>
@@ -178,11 +179,12 @@ const Layout = ({ children, title = "Default Title" }) => {
                 <div>
                   <ul className="flex items-center">
                     <li className="flex-col items-center flex">
-                      <BsMoonStars
+                      {!darkMode ? <><BsMoonStars
                         className="cursor-pointer text-3xl dark:fill-white hover:scale-125"
-                        onClick={() => dispatch({ type: "toggleDark" })}
-                      />
-                      <span className="hidden md:block">Dark Mode</span>
+                        onClick={() => dispatch({ type: "toggleDark" })} 
+                      /> <span className="hidden md:block">Dark Mode</span> </>: <> <BsSun  className="cursor-pointer text-3xl dark:fill-white hover:scale-125"
+                        onClick={() => dispatch({ type: "toggleDark" })}/> <span className="hidden md:block">Light Mode</span> </>}
+                      
                     </li>
                     <li className="justify-between flex">
                       <a

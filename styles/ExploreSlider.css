@@ -213,7 +213,7 @@
 
 .bg-transparent {
 
-  background-color: rgba(255, 255, 255, 0.5); /* For browsers that support it */
+  background-color: rgba(255, 255, 255, 1); /* For browsers that support it */
 
    /* Fallback color */
 }

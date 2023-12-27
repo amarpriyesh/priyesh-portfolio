@@ -45,21 +45,34 @@ const WorkEx = () => {
   ];
 
   return (
-  
     <div className="flex flex-col items-start justify-start w-full">
-    <div className="flex justify-between my-5 w-full">
-        <div className="mr-4 bg-teal-300 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black">Software</div>
-        <div className="mr-4 bg-teal-300 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black">Cloud and Infrastructure</div>
-        <div className="bg-teal-300 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black ">Data Engineeing & Management</div>
-    </div>
-      <div className=" text-2xl dark:text-slate-300 my-4">Software Engineering</div>
+      <div className=" md:my-4 my-2">
+        <div className="dark:text-slate-300 text-gray-600 md:text-xl text-lg ">
+          Filter Results:
+        </div>
+        <div className="flex justify-between my-5 w-full">
+        <div className="mr-4 bg-gray-400 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black">
+          Software
+        </div>
+        <div className="mr-4 bg-gray-400 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black">
+          Cloud and Infrastructure
+        </div>
+        <div className="bg-gray-400 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black ">
+          Data Engineeing & Management
+        </div>
+      </div>
+      </div>
+
+   
+      <div className=" text-xl dark:text-slate-300 text-gray-600 my-4">
+        Software Engineering
+      </div>
       <div className="relative w-full">
         {/* Vertical Line */}
         <div
           className="absolute  transform -translate-x-1/4 w-0.5 mx-4 dark:bg-purple-400 bg-gray-400 h-full"
           style={{ left: "27%" }}
         />
-       
 
         {events.map((event, index) => (
           <div
@@ -72,12 +85,12 @@ const WorkEx = () => {
                 {event.company}
               </div>
               <div>
-              <div className=" px-2 dark:text-slate-400 text-gray-600">
-                {event.title}
-              </div>
-              <div className=" px-2 dark:text-slate-400 text-gray-600">
-                {event.dateLong}
-              </div>
+                <div className=" px-2 dark:text-slate-400 text-gray-600">
+                  {event.title}
+                </div>
+                <div className=" px-2 dark:text-slate-400 text-gray-600">
+                  {event.dateLong}
+                </div>
               </div>
             </div>
 
