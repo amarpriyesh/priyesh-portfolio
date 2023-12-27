@@ -44,7 +44,7 @@ const Projects = () => {
         title: "Portfolio",
         git: [],
         technology: "JavaScript, React, Next.js, Node, HTML, CSS, Tailwind, JWT tokens, SSL/TLS cert, git, linux, keyframes",
-        youtube: "/Portfolio.png",
+        youtube: "/portfolio.png",
         content: `Architected and developed a full-stack stock market trend analysis platform using the MERN stack, integrating real-time financial data display with interactive features such as commenting, liking, and viewing posts, leveraging technologies like MongoDB, Express.js, React.js, Node.js, and Bootstrap for a responsive design.
 Implemented advanced web functionalities including JWT-based state and session management, Redis caching for optimized data retrieval, OAuth for secure third-party authentication, and data encryption, ensuring a secure and seamless end-user experience with efficient load times and robust security protocols.`,
       },
