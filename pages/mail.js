@@ -5,28 +5,64 @@ import axios from 'axios';
 const Mailer = () => {
 
     const [mailData, setMailData] = useState({name:"", from:"", text:""})
-
-
-
-  
-        
-
+    const [errors, setError] = useState({name:""})
+    const [message, setMessage] = useState("")
 
     const handleChange = (e) => {
         setMailData({ ...mailData, [e.target.id]: e.target.value });
       };
+
+      const showMessage = () => {
+        // Set the message
+        setMessage('Email Sent Successfully!');
+    
+        // Clear the message after 3 seconds
+        setTimeout(() => {
+          setMessage('');
+        }, 3000); // 3000 milliseconds = 3 seconds
+      };
+     
     
       // Handle the form submission
       const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevents the default form submission
+         // Prevents the default form submission
+      
+
+        if(!mailData.name) {
+          setError({...errors, name:"Name is missing!"})
+          return
+
+        }
+
+        else if(!mailData.from) {
+          setError({...errors, name:"Email is missing!"})
+          return
+
+        }
+
+        else if(!mailData.from.includes("@")) {
+          setError({...errors, name:"@ domain is missing in Email!"})
+          return
+
+        }
+
+        e.preventDefault();
+
+        setError({})
+
+
+        
     
         // Here you would add the code to send the email using mailData
         console.log('Sending mail with the following data:', mailData);
+        let demoData = {...mailData}
+        setMailData({ name: "", from: "", text: "" });
 
         try {
             const response = await axios.post('https://events-app-hhd0.onrender.com/api/index', {
-              ...mailData
+              ...demoData
             });
+            showMessage()
       
             console.log('Data posted successfully:', response.data);
             // Handle the response further if needed
@@ -36,7 +72,7 @@ const Mailer = () => {
           }
     
         // Reset the form fields after submission
-        setMailData({ name: "", from: "", text: "" });
+       
       };
      
 
@@ -46,9 +82,9 @@ const Mailer = () => {
     
       return (
        
-        <div className="MailerForm md:w-7/12 w-full float-none md:float-right  text-xs sm:text-sm md:text-base">
+        <div className="MailerForm w-full float-none md:float-right  text-xs sm:text-sm md:text-base">
           <form onSubmit={handleSubmit} className="flex-col">
-          <div className="flex my-2">
+          <div className="flex ">
             <label className="w-2/12 mr-2" htmlFor="name">Name:</label>
             <input
               className="w-10/12  h-8 border-2 border-gray-300 dark:border-slate-400 rounded-lg px-2 hover:border-teal-400 focus:border-teal-600 "
@@ -56,6 +92,7 @@ const Mailer = () => {
               id="name"
               value={mailData.name}
               onChange={handleChange}
+              required
             />
             </div>
             <div className="flex my-2">
@@ -67,6 +104,7 @@ const Mailer = () => {
               id="from"
               value={mailData.from}
               onChange={handleChange}
+              required
             />
             </div>
 
@@ -81,6 +119,8 @@ const Mailer = () => {
               style={{minHeight:"96px"}}
             ></textarea>
             </div>
+            {errors.name && <div style={{ color: 'purple' }}>{errors.name}</div>}
+            {message && <div style={{ color: 'teal' }}>{message}</div> }
             
             <button type="submit" className="w-full h-8 mt-4 bg-teal-400 rounded-lg text-white"  
       onClick={handleSubmit}>

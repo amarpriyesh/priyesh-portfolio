@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useState } from "react";
 // ... other imports
 
-const CardCarousel = ({ cardsData, autoPlaySpeed = 2000 }) => {
+const CardCarousel = ({ cardsData, autoPlaySpeed = 1500 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const getSlideClass = (index) => {
@@ -55,7 +55,7 @@ const CardCarousel = ({ cardsData, autoPlaySpeed = 2000 }) => {
     centerPadding: "0px",
     slidesToShow: 3,
     speed: 200,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: autoPlaySpeed,
     beforeChange: (current, next) => setCurrentSlide(next),
     responsive: [
