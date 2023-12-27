@@ -195,16 +195,17 @@ Implementing data storage solutions and writing efficient queries.`,
         Contact Me:
         </div>
         <div className=" flex flex-col md:flex-row w-full my-4 text-gray-800 dark:text-slate-300">
-      <div className=" flex justify-center mr-2  border rounded-lg my-2 shadow-lg ">
+      <div className=" flex justify-center mr-2  border rounded-lg my-2 shadow-lg w-full md:w-4/12 ">
             <div
-              class="badge-base LI-profile-badge"
+          
+              class="badge-base LI-profile-badge "
               data-locale="en_US"
               data-size= "medium"
               data-theme={darkMode ?"dark":"light"}
               data-type="VERTICAL"
               data-vanity="fnupriyesh"
               data-version="v1"
-              style={{ marginLeft: "20%", marginTop: "8px", marginBottom: "4px" }}
+              style={{ marginLeft: "20%", marginTop: "8px", marginBottom: "4px" , backgroundColor:"rgba(255, 255, 255, 1)"}}
             >
               <a
                 class="badge-base__link LI-simple-link"
@@ -215,7 +216,7 @@ Implementing data storage solutions and writing efficient queries.`,
           </div> 
           
 
-          <div className="md:flex md:flex-grow md:w-3/12 text-xs sm:text-sm md:text-base text-center items-center justify-center border shadow-lg  m-2 p-2 mr-2 rounded-lg ">
+          <div className="md:flex md:flex-grow md:w-2/12 text-xs sm:text-sm md:text-base text-center items-center justify-center border shadow-lg  m-2 p-2 mr-2 rounded-lg ">
             <div className="flex-col">
               <div>Priyesh</div>
               <div>Northeastern University</div>
