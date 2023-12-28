@@ -217,3 +217,36 @@
 
    /* Fallback color */
 }
+
+.bg-transparent-black {
+
+  background-color: rgba(255, 255, 255, 0); /* For browsers that support it */
+
+   /* Fallback color */
+}
+
+.iframe {
+  width:200px; 
+  height:100%;
+ 
+}
+
+.iframe-container {
+  background-color: transparent; /* Set your desired background color here */
+  width: 0px; /* Set the width of the iframe container */
+  height: 100%; /* Set the height of the iframe container */
+  
+}
+.profile-badge {
+  margin-left: 1px;
+}
+.profile-badge--light {
+  background-color: #fff;
+  color: #000;
+}
+.profile-badge--width-250 {
+  width: 200px;
+}
+
+
+/* Style for the iframe */

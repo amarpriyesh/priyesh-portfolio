@@ -14,13 +14,11 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
 const Front = () => {
-
-
   const darkMode = useSelector((state) => state.darkMode.value);
 
   useEffect(() => {
     // Load the script dynamically or initialize it here
-    const script = document.createElement('script');
+    const script = document.createElement("script");
     script.src = "https://platform.linkedin.com/badges/js/profile.js";
     script.async = true;
     document.body.appendChild(script);
@@ -148,7 +146,12 @@ Implementing data storage solutions and writing efficient queries.`,
           Project Gallery:
         </div>
         <p className="text-md  md:pb-4 leadin-8 text-gray-800 max-w-xl mx-auto dark:text-slate-400">
-          Below are major projects I worked on, please click on the title to know more about specific projects. You can also go to <Link href="/projects" className="text-teal-600"><span>Projects</span></Link> tab to view all projects.
+          Below are major projects I worked on, please click on the title to
+          know more about specific projects. You can also go to{" "}
+          <Link href="/projects" className="text-teal-600">
+            <span>Projects</span>
+          </Link>{" "}
+          tab to view all projects.
         </p>
         <div className>
           <CardCarousel cardsData={data} />
@@ -164,7 +167,7 @@ Implementing data storage solutions and writing efficient queries.`,
           class="flex-col flex aspect-video rounded-lg overflow-hidden shadow-2xl  border-gray-300  p-1"
           style={{
             width: "60%",
-           
+
             boxShadow: "20px 20px 20px -12px rgba(0, 0, 0, 0.5)",
           }}
         >
@@ -191,30 +194,40 @@ Implementing data storage solutions and writing efficient queries.`,
       </section>
 
       <section className=" mt-8   dark:text-slate-300  text-center  md:text-xl  text-base font-medium">
-       <div className="text-2xl pt-2 font-medium text-teal-600 dark:text-slate-300">
-        Contact Me:
+        <div className="text-2xl pt-2 font-medium text-teal-600 dark:text-slate-300">
+          Contact Me:
         </div>
         <div className=" flex flex-col md:flex-row w-full my-4 text-gray-800 dark:text-slate-300">
-      <div className=" flex justify-center mr-2  border rounded-lg my-2 shadow-lg w-full md:w-4/12 ">
+          <div className=" flex justify-center mr-2  border rounded-lg my-2 shadow-lg w-full md:w-4/12 ">
             <div
-          
-              class="badge-base LI-profile-badge "
+              class="  profile-badge--light profile-badge--width-250  iframe iframe-container LI-profile-badge "
               data-locale="en_US"
-              data-size= "medium"
-              data-theme={darkMode ?"dark":"light"}
+              data-size="medium"
+              data-theme={darkMode ? "dark" : "light"}
               data-type="VERTICAL"
               data-vanity="fnupriyesh"
               data-version="v1"
-              style={{ marginLeft: "20%", marginTop: "8px", marginBottom: "4px" , backgroundColor:"rgba(255, 255, 255, 1)"}}
+              style={{
+                marginTop: "8px",
+                backgroundColor: "transparent",
+                marginBottom: "4px",
+                scale: "0.9",
+                position: "relative",
+                left: "-6%",
+              }}
             >
               <a
-                class="badge-base__link LI-simple-link"
+                class="badge-base__link LI-simple-link "
                 href="https://www.linkedin.com/in/fnupriyesh?trk=profile-badge"
               ></a>
             </div>
-        
-          </div> 
-          
+          </div>
+          <Script
+            src="https://platform.linkedin.com/badges/js/profile.js"
+            async
+            defer
+            type="text/javascript"
+          ></Script>
 
           <div className="md:flex md:flex-grow md:w-2/12 text-xs sm:text-sm md:text-base text-center items-center justify-center border shadow-lg  m-2 p-2 mr-2 rounded-lg ">
             <div className="flex-col">
