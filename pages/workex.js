@@ -77,10 +77,10 @@ const WorkEx = () => {
         {events.map((event, index) => (
           <div
             key={index}
-            className="sm:flex sm:flex-row flex-col flex items-center my-4 w-full relative sm:px-1 sm:shadow-none shadow-lg rounded-lg"
+            className="sm:flex sm:flex-row flex-col flex items-center my-4 w-full relative py-1 sm:px-1 sm:shadow-none sm:border-none border shadow-2xl rounded-lg"
           >
             {/* Event Title on the Left */}
-            <div className=" sm:w-3/12 w-full flex-col   text-center items-center  border shadow-2xl rounded-xl px-1  sm:mr-2 sm:-ml-3 md:text-base text-xs">
+            <div className=" sm:w-3/12 w-full flex-col   text-center items-center  sm:border sm:shadow-2xl rounded-xl px-1  sm:mr-2 sm:-ml-3 md:text-base text-xs">
               <div className=" text-center  px-2 font-medium dark:text-slate-400 text-gray-600">
                 {event.company}
               </div>
@@ -114,7 +114,7 @@ const WorkEx = () => {
             <div className="w-1/12 m-2 hidden sm:block"></div>
 
             {/* Event Content on the Right */}
-            <div className=" sm:w-8/12 w-full lg:flex border shadow-2xl rounded-xl sm:text-sm text-xs sm:ml-10 sm:-mr-6 lg:-mr-0 lg:ml-2 xl:ml-0">
+            <div className=" sm:w-8/12 w-full lg:flex sm:border sm:shadow-2xl rounded-xl sm:text-sm text-xs sm:ml-10 sm:-mr-6 lg:-mr-0 lg:ml-2 xl:ml-0">
               <div className="px-8   md:text-md flex-col  py-4 dark:text-slate-400 text-gray-600 ">
                 {returnBullets(event.content)}
               </div>

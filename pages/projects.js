@@ -175,10 +175,10 @@ setFilter(mapFilter)
               <div
                 key={index}
                 id={event.title}
-                className="sm:flex sm:flex-row  flex-col items-center my-4 w-full relative px-1  rounded-lg  shadow-lg sm:border-none sm:shadow-none"
+                className="sm:flex sm:flex-row  flex-col items-center my-4 w-full relative px-1  rounded-lg border py-1  shadow-2xl sm:border-none sm:shadow-none"
               >
                 {/* Event Title on the Left */}
-                <div className=" sm:w-3/12  w-full flex-col   text-center items-center  border shadow-2xl rounded-xl px-1   mr-2 sm:-ml-3 md:text-base text-xs" >
+                <div className=" sm:w-3/12  w-full flex-col   text-center items-center  sm:border sm:shadow-2xl rounded-xl px-1   mr-2 sm:-ml-3 md:text-base text-xs" >
                   <div className=" text-center  px-2 font-medium dark:text-slate-400 text-gray-600">
                     {event.title}
                   </div>
@@ -206,11 +206,11 @@ setFilter(mapFilter)
                 <div className="sm:w-1/12 sm:block hidden m-2"></div>
 
                 {/* Event Content on the Right */}
-                <div className=" sm:w-8/12  w-full lg:flex border shadow-2xl rounded-xl sm:text-sm text-xs sm:ml-10 -mr-6 lg:-mr-0 lg:ml-2 xl:ml-0 my-2 sm:my-1">
+                <div className=" sm:w-8/12  w-full lg:flex sm:border sm:shadow-2xl rounded-xl sm:text-sm text-xs sm:ml-10 -mr-6 lg:-mr-0 lg:ml-2 xl:ml-0 my-2 sm:my-1">
                   <div className="px-8 w-full lg:w-7/12  md:text-md flex-col  py-4 dark:text-slate-400 text-gray-600 ">
                     {returnBullets(event.content)}
                   </div>
-                  <div className="p-2 w-full lg:w-5/12 border rounded-xl dark:border-slate-600 shadow-2xl dark:text-slate-400 text-gray-600 ">
+                  <div className="p-2 w-full lg:w-5/12 sm:border rounded-xl dark:border-slate-600 sm:shadow-2xl dark:text-slate-400 text-gray-600 ">
                     {!event.youtube.includes("youtube") ? <div  ><img className="aspect-square" src={event.youtube}
                    ></img></div>:<div
                       class="aspect-square rounded-lg overflow-hidden "

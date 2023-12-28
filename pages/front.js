@@ -141,8 +141,8 @@ Implementing data storage solutions and writing efficient queries.`,
         </div>
       </div>
 
-      <div className="text-gray-800 text-center mt-16 mb-8">
-        <div className=" text-teal-600 dark:text-slate-300 text-2xl my-2 font-medium">
+      <div className="text-gray-800 text-center mt-8 mb-8">
+        <div className=" text-teal-600 dark:text-slate-300 md:text-3xl text-2xl my-2 font-medium">
           Project Gallery:
         </div>
         <p className="text-md  md:pb-4 leadin-8 text-gray-800 max-w-xl mx-auto dark:text-slate-400">
@@ -158,21 +158,17 @@ Implementing data storage solutions and writing efficient queries.`,
         </div>
       </div>
 
-      <div className="flex flex-col items-center text-center justify-center  my-2">
-        <div className=" text-teal-600 dark:text-slate-300 text-2xl font-medium">
+      <div className="flex flex-col items-center text-center justify-center mt-8">
+        <div className=" text-teal-600 dark:text-slate-300 md:text-3xl  text-2xl font-medium mb-2 md:mb-4">
           About Me
         </div>
 
         <div
-          class="flex-col flex aspect-video rounded-lg overflow-hidden shadow-2xl  border-gray-300  p-1"
-          style={{
-            width: "60%",
-
-            boxShadow: "20px 20px 20px -12px rgba(0, 0, 0, 0.5)",
-          }}
+          class="flex w-full sm:max-w-screen-md aspect-video rounded-lg shadow-2xl p-1 border"
+         
         >
           <iframe
-            class="flex-col w-full h-full rounded-lg"
+            class=" w-full h-full rounded-lg "
             src="https://www.youtube.com/embed/TqYa_kL0zHc"
             title="YouTube video"
             frameborder="0"
@@ -182,9 +178,9 @@ Implementing data storage solutions and writing efficient queries.`,
         </div>
       </div>
 
-      <section className="text-teal-600 dark:text-slate-300 mt-10 ">
+      <section className="text-teal-600 dark:text-slate-300 mt-8 ">
         <div className="text-center">
-          <h3 className="text-2xl pt-2 font-medium">
+          <h3 className="md:text-3xl  text-2xl pt-2 font-medium">
             Engineering Solutions Offered:
           </h3>
         </div>
@@ -194,14 +190,14 @@ Implementing data storage solutions and writing efficient queries.`,
       </section>
 
       <section className=" mt-8   dark:text-slate-300  text-center  md:text-xl  text-base font-medium">
-        <div className="text-2xl pt-2 font-medium text-teal-600 dark:text-slate-300">
+        <div className="md:text-3xl  text-2xl pt-2 font-medium text-teal-600 dark:text-slate-300">
           Contact Me:
         </div>
 
         <div className=" flex flex-col md:flex-row w-full my-4  text-gray-800 dark:text-slate-300 justify-center">
         <Link href="https://www.linkedin.com/in/fnupriyesh/" target="_blank">
-        <div className="flex-row flex justify-center border shadow-lg rounded-lg m-2 ">
-          <div className=" flex   max-w-xs h-80  ">
+        <div className="flex-row flex justify-center   rounded-lg m-2 ">
+          <div className=" flex   max-w-xs h-80 border shadow-lg rounded-lg ">
           <img src={!darkMode? "/linkedin.png" : "/linkedinblack.png"} alt="Linkedin" className="rounded-lg  " layout="fill"/>
             
           </div>
