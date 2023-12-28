@@ -117,16 +117,16 @@ Implementing data storage solutions and writing efficient queries.`,
         </p>
       </div>
       <div className="text-5xl flex justify-center gap-16  text-gray-600 ">
-        <a href="https://github.com/amarpriyesh">
+        <a href="https://github.com/amarpriyesh" target="_blank">
           <AiFillGithub
             className="dark:fill-white transition-transform duration-300 hover:scale-150 cursor-pointer"
             alt="GitHub"
           />
         </a>
-        <a href="https://github.com/amarpriyesh">
+        <a href="https://www.linkedin.com/in/fnupriyesh/" target="_blank">
           <AiFillLinkedin className="dark:fill-white transition-transform duration-300 hover:scale-150 cursor-pointer" />
         </a>
-        <a href="https://github.com/amarpriyesh">
+        <a href="https://youtube.com/@priyesh926?si=QLsjDoB4yizy-zh1" target="_blank">
           <AiFillYoutube className="dark:fill-white transition-transform duration-300 hover:scale-150 cursor-pointer" />
         </a>
       </div>
@@ -197,37 +197,17 @@ Implementing data storage solutions and writing efficient queries.`,
         <div className="text-2xl pt-2 font-medium text-teal-600 dark:text-slate-300">
           Contact Me:
         </div>
-        <div className=" flex flex-col md:flex-row w-full my-4 text-gray-800 dark:text-slate-300">
-          <div className=" flex justify-center mr-2  border rounded-lg my-2 shadow-lg w-full md:w-4/12 ">
-            <div
-              class="  profile-badge--light profile-badge--width-250  iframe iframe-container LI-profile-badge "
-              data-locale="en_US"
-              data-size="medium"
-              data-theme={darkMode ? "dark" : "light"}
-              data-type="VERTICAL"
-              data-vanity="fnupriyesh"
-              data-version="v1"
-              style={{
-                marginTop: "8px",
-                backgroundColor: "transparent",
-                marginBottom: "4px",
-                scale: "0.9",
-                position: "relative",
-                left: "-6%",
-              }}
-            >
-              <a
-                class="badge-base__link LI-simple-link "
-                href="https://www.linkedin.com/in/fnupriyesh?trk=profile-badge"
-              ></a>
-            </div>
+
+        <div className=" flex flex-col md:flex-row w-full my-4  text-gray-800 dark:text-slate-300 justify-center">
+        <Link href="https://www.linkedin.com/in/fnupriyesh/" target="_blank">
+        <div className="flex-row flex justify-center border shadow-lg rounded-lg m-2 ">
+          <div className=" flex   max-w-xs h-80  ">
+          <img src={!darkMode? "/linkedin.png" : "/linkedinblack.png"} alt="Linkedin" className="rounded-lg  " layout="fill"/>
+            
           </div>
-          <Script
-            src="https://platform.linkedin.com/badges/js/profile.js"
-            async
-            defer
-            type="text/javascript"
-          ></Script>
+          </div>
+          </Link>
+        
 
           <div className="md:flex md:flex-grow md:w-2/12 text-xs sm:text-sm md:text-base text-center items-center justify-center border shadow-lg  m-2 p-2 mr-2 rounded-lg ">
             <div className="flex-col">
@@ -239,7 +219,7 @@ Implementing data storage solutions and writing efficient queries.`,
           </div>
 
           <div class="hidden md:block md:w-0.5 my-6 bg-gray-400 dark:bg-purple-600 "></div>
-          <div className="flex md:w-6/12 w-full m-2 p-2 shadow-lg border rounded-lg text-start items-center ">
+          <div className="flex md:w-6/12 w-full m-2 p-2 shadow-lg border rounded-lg text-start items-center">
             <Mailer />
           </div>
         </div>
