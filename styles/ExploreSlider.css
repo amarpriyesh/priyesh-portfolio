@@ -225,28 +225,45 @@
    /* Fallback color */
 }
 
-.iframe {
-  width:200px; 
-  height:100%;
- 
-}
+
 
 .iframe-container {
   background-color: transparent; /* Set your desired background color here */
-  width: 0px; /* Set the width of the iframe container */
-  height: 100%; /* Set the height of the iframe container */
+  width:270px; 
+  
+
+
+ 
+  /* Set the width of the iframe container */
+  /* Set the height of the iframe container */
   
 }
+
+
+
+
+.profile-badge--light {
+  color: #000;
+}
+
 .profile-badge {
   margin-left: 1px;
 }
-.profile-badge--light {
-  background-color: #fff;
-  color: #000;
+
+.profile-badge.profile-badge--width-250.profile-badge--light  {
+  margin-left: 1px;
+  width: 30px;   
 }
-.profile-badge--width-250 {
-  width: 200px;
+
+.body {
+  width: 30px; 
 }
+
+.html {
+  width: 30px; 
+
+}
+
 
 
 /* Style for the iframe */

@@ -46,41 +46,41 @@ const WorkEx = () => {
 
   return (
     <div className="flex flex-col items-start justify-start w-full">
-      <div className=" md:my-4 my-2">
+      <div className=" md:my-4 my-0">
         <div className="dark:text-slate-300 text-gray-600 md:text-xl text-lg ">
           Filter Results:
         </div>
-        <div className="flex justify-between my-5 w-full">
-        <div className="mr-4 bg-gray-400 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black">
+        <div className="flex flex-wrap justify-between my-1  w-full lg:gap-2 md:text-base gap-0 sm:text-sm text-xs md:gap-1">
+        <div className="mr-4 bg-slate-400 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black">
           Software
         </div>
-        <div className="mr-4 bg-gray-400 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black">
+        <div className="mr-4 bg-slate-400 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black">
           Cloud and Infrastructure
         </div>
-        <div className="bg-gray-400 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black ">
-          Data Engineeing & Management
+        <div className="bg-slate-400 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black ">
+          Data Engineeing
         </div>
       </div>
       </div>
 
    
-      <div className=" text-xl dark:text-slate-300 text-gray-600 my-4">
+      <div className=" text-xl dark:text-slate-300 text-gray-600 md:my-4 my-0">
         Software Engineering
       </div>
       <div className="relative w-full">
         {/* Vertical Line */}
         <div
-          className="absolute  transform -translate-x-1/4 w-0.5 mx-4 dark:bg-purple-400 bg-gray-400 h-full"
+          className="hidden sm:flex absolute  transform -translate-x-1/4 w-0.5 mx-4 dark:bg-purple-400 bg-gray-400 h-full"
           style={{ left: "27%" }}
         />
 
         {events.map((event, index) => (
           <div
             key={index}
-            className="flex items-center my-4 w-full relative px-1"
+            className="sm:flex sm:flex-row flex-col flex items-center my-4 w-full relative sm:px-1 sm:shadow-none shadow-lg rounded-lg"
           >
             {/* Event Title on the Left */}
-            <div className=" w-3/12 flex-col   text-center items-center  border shadow-2xl rounded-xl px-1  mr-2 -ml-3 md:text-base text-xs">
+            <div className=" sm:w-3/12 w-full flex-col   text-center items-center  border shadow-2xl rounded-xl px-1  sm:mr-2 sm:-ml-3 md:text-base text-xs">
               <div className=" text-center  px-2 font-medium dark:text-slate-400 text-gray-600">
                 {event.company}
               </div>
@@ -104,17 +104,17 @@ const WorkEx = () => {
           </div> */}
 
             <div
-              className=" text-center w-6   py-1 xs:w-10  lg:w-20  text-xs md:text-sm  lg:text-base absolute h-10 lg:h-8   flex items-center justify-center  bg-teal-300 border border-gray-400 shadow-2xl shadow-black
+              className=" hidden sm:flex text-center w-6   py-1 xs:w-10  lg:w-20  text-xs md:text-sm  lg:text-base absolute h-10 lg:h-8    items-center justify-center  bg-teal-300 border border-gray-400 shadow-2xl shadow-black
         text-gray-800 rounded-md lg:-translate-x-1/4 transform"
               style={{ left: "26.8%" }}
             >
               {event.date}
             </div>
 
-            <div className="w-1/12 m-2"></div>
+            <div className="w-1/12 m-2 hidden sm:block"></div>
 
             {/* Event Content on the Right */}
-            <div className=" w-8/12 lg:flex border shadow-2xl rounded-xl sm:text-sm text-xs ml-10 -mr-6 lg:-mr-0 lg:ml-2 xl:ml-0">
+            <div className=" sm:w-8/12 w-full lg:flex border shadow-2xl rounded-xl sm:text-sm text-xs sm:ml-10 sm:-mr-6 lg:-mr-0 lg:ml-2 xl:ml-0">
               <div className="px-8   md:text-md flex-col  py-4 dark:text-slate-400 text-gray-600 ">
                 {returnBullets(event.content)}
               </div>

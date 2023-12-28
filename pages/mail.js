@@ -87,7 +87,7 @@ const Mailer = () => {
           <div className="flex ">
             <label className="w-2/12 mr-2" htmlFor="name">Name:</label>
             <input
-              className="w-10/12 bg-white text-gray-600 h-8 border-2 border-gray-300 dark:border-slate-400 rounded-lg px-2 hover:border-teal-400 focus:border-teal-600 "
+              className="w-10/12 dark:bg-black dark:text-gray-300 bg-white text-gray-600h-8 border-2 border-gray-300 dark:border-slate-400 rounded-lg px-2 hover:border-teal-400 focus:border-teal-600 "
               type="text"
               id="name"
               value={mailData.name}
@@ -99,7 +99,7 @@ const Mailer = () => {
             
             <label className="w-2/12 mr-2" htmlFor="from">Your Email:</label>
             <input
-              className="w-10/12 h-8 border-2 bg-white text-gray-600 border-gray-300 dark:border-slate-400 rounded-lg px-2 hover:border-teal-400 focus:border-teal-600"
+              className="w-10/12 h-8 border-2 dark:bg-black dark:text-gray-300 bg-white text-gray-600 border-gray-300 dark:border-slate-400 rounded-lg px-2 hover:border-teal-400 focus:border-teal-600"
               type="email"
               id="from"
               value={mailData.from}
@@ -112,7 +112,7 @@ const Mailer = () => {
             
             <label className="w-2/12 mr-2" htmlFor="text">Message:</label>
             <textarea
-              className="w-10/12 text-sm border-2 bg-white text-gray-600 border-gray-300 dark:border-slate-400 rounded-lg px-2 py-1 overflow-fill hover:border-teal-400 focus:border-teal-600"
+              className="w-10/12 text-sm border-2 dark:bg-black dark:text-gray-300 bg-white text-gray-600 border-gray-300 dark:border-slate-400 rounded-lg px-2 py-1 overflow-fill hover:border-teal-400 focus:border-teal-600"
               id="text"
               value={mailData.text}
               onChange={handleChange}
