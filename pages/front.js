@@ -126,7 +126,10 @@ Implementing data storage solutions and writing efficient queries.`,
         <a href="https://www.linkedin.com/in/fnupriyesh/" target="_blank">
           <AiFillLinkedin className="dark:fill-white transition-transform duration-300 hover:scale-150 cursor-pointer" />
         </a>
-        <a href="https://youtube.com/@priyesh926?si=QLsjDoB4yizy-zh1" target="_blank">
+        <a
+          href="https://youtube.com/@priyesh926?si=QLsjDoB4yizy-zh1"
+          target="_blank"
+        >
           <AiFillYoutube className="dark:fill-white transition-transform duration-300 hover:scale-150 cursor-pointer" />
         </a>
       </div>
@@ -134,7 +137,7 @@ Implementing data storage solutions and writing efficient queries.`,
         <div>
           <img
             src="/profile.png"
-            className="rounded-full flex ml-0 mt-96 absolute bottom-0"
+            className="rounded-full flex ml-0 mt-96 mb-1 absolute bottom-0"
             layout="fill"
             objectFit="cover"
           />
@@ -163,10 +166,7 @@ Implementing data storage solutions and writing efficient queries.`,
           About Me
         </div>
 
-        <div
-          class="flex w-full sm:max-w-screen-md aspect-video rounded-lg shadow-2xl p-1 border"
-         
-        >
+        <div class="flex w-full sm:max-w-screen-md aspect-video rounded-lg shadow-2xl p-1 border">
           <iframe
             class=" w-full h-full rounded-lg "
             src="https://www.youtube.com/embed/TqYa_kL0zHc"
@@ -189,37 +189,7 @@ Implementing data storage solutions and writing efficient queries.`,
         </div>
       </section>
 
-      <section className=" mt-8   dark:text-slate-300  text-center  md:text-xl  text-base font-medium">
-        <div className="md:text-3xl  text-2xl pt-2 font-medium text-teal-600 dark:text-slate-300">
-          Contact Me:
-        </div>
-
-        <div className=" flex flex-col md:flex-row w-full my-4  text-gray-800 dark:text-slate-300 justify-center">
-        <Link href="https://www.linkedin.com/in/fnupriyesh/" target="_blank">
-        <div className="flex-row flex justify-center   rounded-lg m-2 ">
-          <div className=" flex   max-w-xs h-80 border shadow-lg rounded-lg ">
-          <img src={!darkMode? "/linkedin.png" : "/linkedinblack.png"} alt="Linkedin" className="rounded-lg  " layout="fill"/>
-            
-          </div>
-          </div>
-          </Link>
-        
-
-          <div className="md:flex md:flex-grow md:w-2/12 text-xs sm:text-sm md:text-base text-center items-center justify-center border shadow-lg  m-2 p-2 mr-2 rounded-lg ">
-            <div className="flex-col">
-              <div>Priyesh</div>
-              <div>Northeastern University</div>
-              <div>+1(617)7519543</div>
-              <div>17 Vancouver st. Boston</div>
-            </div>
-          </div>
-
-          <div class="hidden md:block md:w-0.5 my-6 bg-gray-400 dark:bg-purple-600 "></div>
-          <div className="flex md:w-6/12 w-full m-2 p-2 shadow-lg border rounded-lg text-start items-center">
-            <Mailer />
-          </div>
-        </div>
-      </section>
+      
     </>
   );
 };
