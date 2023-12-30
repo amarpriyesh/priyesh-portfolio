@@ -82,7 +82,7 @@ const Mailer = () => {
     
       return (
        
-        <div className="MailerForm w-full float-none md:float-right  text-xs sm:text-sm md:text-base">
+        <div className="MailerForm w-full mr-2 float-none md:float-right  text-xs sm:text-sm md:text-base">
           <form onSubmit={handleSubmit} className="flex-col ">
           <div className="flex ">
             <label className="w-2/12 mr-2" htmlFor="name">Name:</label>

@@ -19,6 +19,7 @@ import { useSelector } from "react-redux";
 import React, { useReducer } from "react";
 import { darkModeReducer } from "../components/reducers";
 import TwinklingBackground from "@/components/stars";
+import Mailer from "./mail";
 
 const ExploreSlider = ({ isOpen, onClose }) => {
   const router = useRouter();
@@ -205,6 +206,42 @@ const Layout = ({ children, title = "Default Title" }) => {
 
                 {children}
               </div>
+              <div
+        className=" mt-8   dark:text-slate-300  text-center  md:text-xl  text-base font-medium bg-gradient-to-b from-transparent to-teal-600  ">
+     
+        <div className="md:text-3xl  text-2xl pt-2 font-medium text-teal-600 dark:text-slate-300">
+          Contact Me:
+        </div>
+
+        <div className=" flex flex-col md:flex-row w-full  h-full text-gray-800 dark:text-slate-300 justify-center ">
+          <Link href="https://www.linkedin.com/in/fnupriyesh/" target="_blank">
+            <div className="flex-row flex justify-center   rounded-lg m-2  ">
+              <div className=" flex   max-w-xs h-72 border shadow-lg rounded-lg dark:border-slate-300 border-slate-600  ">
+                <img
+                  src={!darkMode ? "/linkedin.png" : "/linkedinblack.png"}
+                  alt="Linkedin"
+                  className="rounded-lg  "
+                  layout="fill"
+                />
+              </div>
+            </div>
+          </Link>
+
+          <div className="md:flex md:flex-grow md:w-2/12 text-xs sm:text-sm md:text-base text-center items-center justify-center border dark:border-slate-300 border-slate-600 shadow-lg  m-2 p-2 mr-2 rounded-lg ">
+            <div className="flex-col">
+              <div>Priyesh</div>
+              <div>Northeastern University</div>
+              <div>+1(617)7519543</div>
+              <div>17 Vancouver st. Boston</div>
+            </div>
+          </div>
+
+          <div class="hidden md:block md:w-0.5 my-6 bg-gray-400 dark:bg-purple-600 "></div>
+          <div className="flex md:w-6/12 m-2 p-2 shadow-lg border rounded-lg text-start items-center dark:border-slate-300 border-slate-600">
+            <Mailer />
+          </div>
+        </div>
+      </div>
 
               {/* <div className="px-10 md:px-20 lg:px-40">
                 <Front />
