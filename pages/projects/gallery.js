@@ -6,6 +6,7 @@ import { BsPause, BsPlay } from "react-icons/bs";
 import { useRouter } from "next/router";
 import { projectList } from "@/components/projectList";
 
+
 const Gallery = () => {
 
     const router = useRouter();
@@ -22,6 +23,7 @@ const Gallery = () => {
   }, {});
 
 console.log("galleryMap", galleryMap);
+
 const gallery = galleryMap[galleryItem];
 
 

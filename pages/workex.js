@@ -1,4 +1,58 @@
+import { workList } from "@/components/workList";
+import {useState} from "react"
 const WorkEx = () => {
+  const events = workList
+  
+  const k = events.flatMap(a => a.content.flatMap(a => a.technology.split(",").map(a => a.trim().toLocaleLowerCase())))
+  
+  let filterMap = k.reduce((acc, val) => {acc[val] = false ; return acc},{})
+  const [filters, setFilters] = useState(filterMap)
+
+  const filter = (data) => {
+   let allFalse = true
+    
+    for(const key in filters) {
+      if (filters[key]) {
+        allFalse = false
+        break
+      }
+
+
+      
+    }
+
+    if(allFalse) {
+      return true
+    }
+
+
+    let anyFilter = false
+    const filterKeys = Object.keys(filters)
+    const techs = data.technology.split(",").map(a => a.trim().toLowerCase())
+
+    
+
+    for (const tech in techs) {
+ 
+     
+      if (filterKeys.includes(techs[tech])) {
+       
+        if(filters[techs[tech]]) {
+          anyFilter = true
+          break
+        }
+        
+      }
+    }
+
+    if(anyFilter) {
+      return true
+    }
+
+    return false
+    
+  }
+
   const returnBullets = (text) => {
     const arr = text.split("\n");
     return (
@@ -12,37 +66,28 @@ const WorkEx = () => {
       </div>
     );
   };
-  const events = [
-    {
-      date: "Jul 2022",
-      dateLong: "Jul 2022 - Dec 2022",
-      company: "Charles River Development",
-      title: "Software Development Intern",
-      content: `Developed a log analyzer module in Java to compare incoming FIX messages from brokers and outgoing messages to clients, improving performance testing time by more than 90%.
-      Migrated from ant-based build to Gradle build for better dependency management and moved version control from perforce to GitHub to facilitate Azure integration and streamline the CI/CD pipeline.
-      Collaborated with a team of five, debugging and troubleshooting trading issues by working on new features and patches utilizing data models and Java beans, and leveraging JPA (Hibernate) for efficient database interactions.`,
-    },
-    {
-      date: "Jul 2020",
-      dateLong: "Jul 2020 - Aug 2021",
-      company: "Hughes Systique",
-      title: "Senior Engineer",
-      content: `Created a web application leveraging React to display various API responses cutting down post-deployment regression testing time by 80% and employed Site 24x7 tool to monitor availability of API services enabling the team to debug API issues.
-      Designed and deployed Python/Flask-based scalable AI microservice using Docker containers on AWS ECS helping organization to identify and filter spam messages, additionally exposed REST APIs to ensure integration with .net (c# based) backend.
-      Achieved 60% reduction in customer escalation by streamlining the internet usage consumption dashboard through query optimization and granular data storage implementation, using Python, SQL loader, CRON jobs, and Shell Scripts.`,
-    },
-    {
-      date: "Nov 2015",
-      dateLong: "Nov 2015 - May 2020",
-      company: "Ericsson",
-      title: "Software Engineer",
-      content: `Utilized JavaScript and rapid application development techniques to devise and debug a ticketing application, Micro-focus Service Manager, improving IT service management processes such as Incident, Problem, and Change Management.
-      Integrated service manager with the CRM tool through restful web services, created features resulting in a 20% reduction in incorrect assignment of trouble tickets to resolver groups through automatic routing.
-      Utilized Java Spring boot framework to architect backend solution implementing an Event to Trouble-Ticket integration through restful APIs, schemas, and processes, resulting in a 30% reduction in event resolution time.
-      Lead deployment releases, making significant contribution to scrum meetings, code review, sprint planning, and retrospectives in compliance with Agile SDLC principles, additionally lead team building activities to foster problem-solving and communication.`,
-    },
-    // ... more events
-  ];
+  
+
+  const filterItems = () => {
+    return (
+      <div className="flex-wrap flex  gap-2 md:text-base sm:text-sm text-xs md-gap-1 ">
+        {Object.entries(filters).map(([key, value], index) => (
+          <div
+            className={`${
+              value ? "bg-teal-300" : "bg-slate-400"
+            } rounded-lg px-1 md:px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black hover:cursor-pointer`}
+            onClick={() => {
+              setFilters({ ...filters, [key]: !value });
+            }}
+            key={index}
+          >
+            {key}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
 
   return (
     <div className="flex flex-col items-start justify-start w-full">
@@ -50,22 +95,14 @@ const WorkEx = () => {
         <div className="dark:text-slate-300 text-gray-600 md:text-xl text-lg ">
           Filter Results:
         </div>
-        <div className="flex flex-wrap justify-between my-1  w-full lg:gap-2 md:text-base gap-0 sm:text-sm text-xs md:gap-1">
-        <div className="mr-4 bg-slate-400 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black">
-          Software
-        </div>
-        <div className="mr-4 bg-slate-400 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black">
-          Cloud and Infrastructure
-        </div>
-        <div className="bg-slate-400 rounded-lg px-2 drop-shadow-2xl dark:border-slate-300 border-gray-400 border shadow-black ">
-          Data Engineeing
-        </div>
+        <div >
+      {filterItems()}
       </div>
       </div>
 
    
       <div className=" text-xl dark:text-slate-300 text-gray-600 md:my-4 my-0">
-        Software Engineering
+       Work Experience:
       </div>
       <div className="relative w-full">
         {/* Vertical Line */}
@@ -80,7 +117,7 @@ const WorkEx = () => {
             className="sm:flex sm:flex-row flex-col flex items-center my-4 w-full relative py-1 sm:px-1 sm:shadow-none sm:border-none border shadow-2xl rounded-lg"
           >
             {/* Event Title on the Left */}
-            <div className=" sm:w-3/12 w-full flex-col   text-center items-center  sm:border sm:shadow-2xl rounded-xl px-1  sm:mr-2 sm:-ml-3 md:text-base text-xs">
+            <div className="sm:w-3/12 w-full flex-col   text-center items-center  sm:border sm:shadow-2xl rounded-xl px-1  sm:mr-2 sm:-ml-3 md:text-base text-xs">
               <div className=" text-center  px-2 font-medium dark:text-slate-400 text-gray-600">
                 {event.company}
               </div>
@@ -116,7 +153,7 @@ const WorkEx = () => {
             {/* Event Content on the Right */}
             <div className=" sm:w-8/12 w-full lg:flex sm:border sm:shadow-2xl rounded-xl sm:text-sm text-xs sm:ml-10 sm:-mr-6 lg:-mr-0 lg:ml-2 xl:ml-0">
               <div className="px-8   md:text-md flex-col  py-4 dark:text-slate-400 text-gray-600 ">
-                {returnBullets(event.content)}
+                {event.content.filter(a => filter(a)).map(a => returnBullets(a.content))}
               </div>
             </div>
           </div>
