@@ -2,6 +2,7 @@ import Link from "next/link";
 import Layout from "../layout";
 import React, { useState, useEffect } from "react";
 import {projectList} from "@/components/projectList";
+import { BsGithub, BsCamera } from "react-icons/bs";
 
 const Projects = () => {
   const [filter, setFilter] = useState({});
@@ -102,19 +103,35 @@ const Projects = () => {
 
   useEffect(() => {
     eventFilter();
+
   }, [filter]);
+
+  const getGitText= (text) => {
+    if (text.toLowerCase().includes("node")) {
+      return "GitHub Backend"
+    }
+    else if (text.toLowerCase().includes("react")) {
+      return "GitHub Frontend"
+    }
+    else {
+      return "GitHub"
+    }
+
+  }
+  const hint = " (select to filter results by technology)"
+  const hint1 = " (click on the title for pictures)"
   return (
     <Layout title="Priyesh's Portfolio">
       {
         <div className="flex flex-col items-start justify-start w-full   ">
           <div className=" md:my-4 my-0">
-            <div className="dark:text-slate-300 text-gray-600 md:text-xl text-lg mb-1 ">
-              Filter Results:
+            <div className="dark:text-slate-300 text-gray-600 md:text-xl text-lg mb-1 flex-row flex items-center">
+              Filter Results: <div className="ml-1 md:text-sm text-xs">{hint}</div>
             </div>
             {filterItems()}
           </div>
-          <div className=" text-xl dark:text-slate-300 text-gray-600 md:my-2 my-0">
-            Projects:
+          <div className=" text-xl dark:text-slate-300 text-gray-600 md:my-2 my-0 flex-row flex items-center">
+            Projects: <div className="ml-1 md:text-sm text-xs">{hint1}</div>
           </div>
           <div className="relative w-full">
             {/* Vertical Line */}
@@ -133,14 +150,18 @@ const Projects = () => {
               
                 <div className=" sm:w-3/12  w-full flex-col   text-center items-center  sm:border sm:shadow-2xl rounded-xl px-1   mr-2 sm:-ml-3 md:text-base text-xs">
                 <Link href={`/projects/gallery/?galleryItem=${event.title}#gallery`} className="w-fit">
-                  <div className=" text-center  px-2 font-medium dark:text-slate-400 text-gray-600">
+                  <div className=" text-center  px-2 font-medium dark:text-slate-400 text-gray-600 hover:scale-110">
                     {event.title}
                   </div>
                   <div className=" px-2 dark:text-slate-400 text-gray-600">
                     {event.company}
                   </div>
                   <div> {returnTechnology(event.technology)}</div>
+                  <div className="flex flex-row justify-center items-center hover:scale-125"><BsCamera className="mr-1"/>Photo Gallery</div>
+                  
                   </Link>
+                  <ul className="text-gray-600 dark:text-slate-300 justify-center items-center flex-col flex">{event.git.map((val, index) => <li key={index} className="flex flex-row text-xs hover:scale-110"><BsGithub className="text-sm"/><Link href={val} className="flex-wrap ml-1">{getGitText(val)}</Link></li>)}</ul>
+                  
                 </div>
                 
 
