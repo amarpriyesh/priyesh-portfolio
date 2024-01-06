@@ -157,7 +157,7 @@ const Projects = () => {
                     {event.company}
                   </div>
                   <div> {returnTechnology(event.technology)}</div>
-                  <div className="flex flex-row justify-center items-center hover:scale-125"><BsCamera className="mr-1"/>Photo Gallery</div>
+                  <div className="flex text-gray-600 dark:text-slate-300 flex-row justify-center items-center hover:scale-125"><BsCamera className="mr-1"/>Photo Gallery</div>
                   
                   </Link>
                   <ul className="text-gray-600 dark:text-slate-300 justify-center items-center flex-col flex">{event.git.map((val, index) => <li key={index} className="flex flex-row text-xs hover:scale-110"><BsGithub className="text-sm"/><Link href={val} className="flex-wrap ml-1">{getGitText(val)}</Link></li>)}</ul>

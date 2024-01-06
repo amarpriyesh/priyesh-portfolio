@@ -169,7 +169,7 @@ Implementing data storage solutions and writing efficient queries.`,
         <div class="flex w-full sm:max-w-screen-md aspect-video rounded-lg shadow-2xl p-1 border">
           <iframe
             class=" w-full h-full rounded-lg "
-            src="https://www.youtube.com/embed/TqYa_kL0zHc"
+            src="https://www.youtube.com/embed/IRYA-keUlvs"
             title="YouTube video"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
