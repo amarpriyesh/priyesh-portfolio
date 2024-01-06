@@ -21,8 +21,8 @@ Implemented advanced web functionalities including JWT-based state and session m
       company: "Northeastern University",
       title: "Trending Stock Market WebSite",
       git: [
-        "https://github.com/amarpriyesh/final-project-tuiter-node",
-        "https://github.com/amarpriyesh/final-project-tuiter-react",
+        "https://github.com/amarpriyesh/WebDev-StockMarketNews-BackEnd",
+        "https://github.com/amarpriyesh/WebDev-StockMarketNews-FrontEnd/",
       ],
       technology:
         "JavaScript, React, Express, Axios, MongoDB, Node, MERN, HTML, CSS, Bootstrap, JWT tokens, Redis, git, linux",
