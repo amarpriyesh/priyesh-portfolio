@@ -4,6 +4,7 @@ export  const  projectList = [
       company: "Northeastern University",
       title: "Portfolio",
       git: ["https://github.com/amarpriyesh/priyesh-portfolio"],
+      staticSite:"",
       technology:
         "JavaScript, React, Next.js, Node, HTML, CSS, Tailwind, JWT tokens, SSL/TLS cert, git, linux, keyframes",
       youtube: "/portfolio.png",
@@ -24,9 +25,10 @@ Implemented advanced web functionalities including JWT-based state and session m
         "https://github.com/amarpriyesh/WebDev-StockMarketNews-BackEnd",
         "https://github.com/amarpriyesh/WebDev-StockMarketNews-FrontEnd/",
       ],
+      staticSite:"",
       technology:
         "JavaScript, React, Express, Axios, MongoDB, Node, MERN, HTML, CSS, Bootstrap, JWT tokens, Redis, git, linux",
-      youtube: "/stockmarket.png",
+      youtube: "https://www.youtube.com/embed/wC-MKTZXSWk",
       imageList: ["/marketnews/adminProfile.png", "/marketnews/comments.png", "/marketnews/googleLogin.png", "/marketnews/liveSearch.png", "/marketnews/search.png", "/marketnews/trendingNews.png", "/marketnews/userProfile.png"],
       content: `Architected and developed a full-stack stock market trend analysis platform using the MERN stack, integrating real-time financial data display with interactive features such as commenting, liking, and viewing posts, leveraging technologies like MongoDB, Express.js, React.js, Node.js, and Bootstrap for a responsive design.
 Implemented advanced web functionalities including JWT-based state and session management, Redis caching for optimized data retrieval, OAuth for secure third-party authentication, and data encryption, ensuring a secure and seamless end-user experience with efficient load times and robust security protocols.`,
@@ -37,6 +39,7 @@ Implemented advanced web functionalities including JWT-based state and session m
       company: "Northeastern University",
       title: "Visulization BI tool",
       git: ["https://github.com/amarpriyesh/visualization-app"],
+      staticSite:"",
       technology: "Python, Tkinter, Matplotlib, Pandas",
       youtube: "/visualization.png",
       imageList: ["/visualization/barChart.png",
@@ -51,8 +54,9 @@ Implemented advanced web functionalities including JWT-based state and session m
       company: "Northeastern University",
       title: "Smart Savr Wallet App",
       git: ["https://github.com/amarpriyesh/SmartSavr"],
+      staticSite:"",
       technology: "Java, Android, kotlin, Firestore, Gradle",
-      youtube: "/smartsavrcharts.png",
+      youtube: "https://www.youtube.com/embed/d9dIrWY9iNo",
       imageList: ["/smartsavr/childChores.png",
       "/smartsavr/childCreate.png",
       "/smartsavr/childList.png",
@@ -71,6 +75,7 @@ Implemented advanced web functionalities including JWT-based state and session m
       company: "Northeastern University",
       title: "Weather App",
       git: ["https://github.com/amarpriyesh/SimpleWeather"],
+      staticSite:"",
       technology: "Java, Android, kotlin, Firestore, Gradle, Retrofit",
       youtube: "/weatherapp.png",
       imageList: ["/weather/searchPage.png", "/weather/weatherCurrent.png", "/weather/weatherHourly.png", "/weather/weatherWeekly.png"],
@@ -85,6 +90,7 @@ Implemented a RecyclerView to efficiently display daily weather forecasts, incor
         "https://github.com/amarpriyesh/final-project-tuiter-node",
         "https://github.com/amarpriyesh/final-project-tuiter-react",
       ],
+      staticSite:"",
       technology:
         "JavaScript, React, Express, Jest, Axios, MongoDB, Node, MERN, HTML, CSS, Bootstrap",
       youtube: "/tuiter-message.png",
@@ -103,6 +109,7 @@ Implemented a RecyclerView to efficiently display daily weather forecasts, incor
       "/dungeons/gamePlay2.png",
       "/dungeons/newDungeon.png"],
       git: ["https://github.com/amarpriyesh/Pac-Man-Adventure-Game"],
+      staticSite:"",
       content: `Constructed an adventure game using MVC principles and object-oriented design patterns to make the gameplay realistic.
       Tested project modules using a JUnit 4 test suite, achieving 86% coverage. Implemented the game's view using Java Swing library.`,
     },
