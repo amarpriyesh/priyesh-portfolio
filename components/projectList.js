@@ -56,7 +56,7 @@ Implemented advanced web functionalities including JWT-based state and session m
       git: ["https://github.com/amarpriyesh/SmartSavr"],
       staticSite:"",
       technology: "Java, Android, kotlin, Firestore, Gradle",
-      youtube: "https://www.youtube.com/embed/d9dIrWY9iNo",
+      youtube: "https://www.youtube.com/embed/PE9cbdMIxQE",
       imageList: ["/smartsavr/childChores.png",
       "/smartsavr/childCreate.png",
       "/smartsavr/childList.png",
