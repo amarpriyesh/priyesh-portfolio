@@ -102,7 +102,7 @@ const gallery = galleryMap[galleryItem];
           </div>
 
           <div
-            className="flex flex-col justify-center items-center border-gray-600 dark:border-slate-300"
+            className="flex rounded-lg flex-col justify-center items-center  border-gray-600 dark:border-slate-300 p-1"
             style={{
               height: "90vh",
               width: "80vw",

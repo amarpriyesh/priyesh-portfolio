@@ -107,10 +107,10 @@ const Projects = () => {
   }, [filter]);
 
   const getGitText= (text) => {
-    if (text.toLowerCase().includes("node")) {
+    if (text.toLowerCase().includes("node") || text.toLowerCase().includes("backend") ) {
       return "GitHub Backend"
     }
-    else if (text.toLowerCase().includes("react")) {
+    else if (text.toLowerCase().includes("react") || text.toLowerCase().includes("frontend")) {
       return "GitHub Frontend"
     }
     else {
