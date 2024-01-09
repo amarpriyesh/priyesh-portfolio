@@ -1,7 +1,9 @@
 
 import React, {useState} from "react"
 import axios from 'axios';
-
+import Link from "next/link";
+import Head from "next/head";
+import Candely from "@/components/candely";
 const Mailer = () => {
 
     const [mailData, setMailData] = useState({name:"", from:"", text:""})
@@ -83,6 +85,8 @@ const Mailer = () => {
       return (
        
         <div className="MailerForm w-full mr-2 float-none md:float-right  text-xs sm:text-sm md:text-base">
+        <Head> <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+   </Head>
           <form onSubmit={handleSubmit} className="flex-col ">
           <div className="flex ">
             <label className="w-2/12 mr-2" htmlFor="name">Name:</label>
@@ -127,8 +131,12 @@ const Mailer = () => {
               Send Mail
             </button>
           </form>
-          
+       <Candely/>
+        
+
         </div>
+
+        
         
         
       );
